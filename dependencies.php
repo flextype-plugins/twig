@@ -15,7 +15,15 @@ use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Slim\Http\Environment;
 use Slim\Http\Uri;
+use Slim\Csrf\Guard;
 use Twig\Extension\DebugExtension;
+
+/**
+ * Add CSRF (cross-site request forgery) protection service to Flextype container
+ */
+$flextype['csrf'] = static function ($container) {
+    return new Guard();
+};
 
 /**
  * Add site controller to Flextype container
