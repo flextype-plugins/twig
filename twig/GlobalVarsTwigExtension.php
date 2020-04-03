@@ -42,8 +42,7 @@ class GlobalVarsTwigExtension extends Twig_Extension implements Twig_Extension_G
             'PATH_CONFIG_SITE' => PATH['config']['site'],
             'PATH_CACHE' => PATH['cache'],
             'PATH_LOGS' => PATH['logs'],
-            'PHP_VERSION' => PHP_VERSION,
-            'registry' => $this->flextype['registry']->dump(),
+            'PHP_VERSION' => PHP_VERSION
         ];
     }
 }
