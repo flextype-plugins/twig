@@ -1,10 +1,10 @@
 <h1 align="center">Twig Plugin for <a href="http://flextype.org/">Flextype</a></h1>
 
-Twig plugin to present Twig template engine for Flextype.
-
 <p align="center">
 <a href="https://github.com/flextype-plugins/twig/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-plugins/twig.svg?label=version"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/github/downloads/flextype-plugins/twig/total.svg?colorB=blue" alt="Total downloads"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/badge/Flextype-0.9.7-green.svg" alt="Flextype"></a> <a href="https://flextype.org/en/discord"><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&colorB=728ADA&label=Discord%20Chat" alt="Discord"></a>
 </p>
+
+Twig plugin to present Twig template engine for Flextype.
 
 ## Dependencies
 
