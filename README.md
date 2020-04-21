@@ -21,8 +21,6 @@ The following dependencies need to be installed for Twig Plugin.
 * Download & Install all required dependencies.
 * Download Admin Panel Plugin and unzip plugin to the folder /site/plugins/
 
-
-
 ## LICENSE
 [The MIT License (MIT)](https://github.com/flextype-plugins/twig/blob/master/LICENSE.txt)
 Copyright (c) 2018-2020 [Sergey Romanenko](https://github.com/Awilum)
