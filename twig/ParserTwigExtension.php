@@ -35,8 +35,7 @@ class ParserTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('parser_decode', [$this, 'decode']),
-            new Twig_SimpleFunction('parser_encode', [$this, 'encode']),
+            new Twig_SimpleFunction('parser_parse', [$this, 'parse']),
             new Twig_SimpleFunction('parser_get_info', [$this, 'getParserInfo']),
         ];
     }
@@ -50,17 +49,9 @@ class ParserTwigExtension extends Twig_Extension
     }
 
     /**
-     * Encode
+     * Parse
      */
-    public function encode($input, string $parser)
-    {
-        return $this->flextype['parser']->encode($input, $parser);
-    }
-
-    /**
-     * Decode
-     */
-    public function decode(string $input, string $parser, bool $cache = true)
+    public function parse(string $input, string $parser, bool $cache = true)
     {
         return $this->flextype['parser']->decode($input, $parser, $cache);
     }

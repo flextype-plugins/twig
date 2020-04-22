@@ -59,7 +59,7 @@ class JsonTwigExtension extends Twig_Extension
      */
     public function encode($input) : string
     {
-        return $this->flextype['parser']->encode($input, 'json');
+        return $this->flextype['serializer']->encode($input, 'json');
     }
 
     /**
@@ -67,6 +67,6 @@ class JsonTwigExtension extends Twig_Extension
      */
     public function decode(string $input, bool $cache = true)
     {
-        return $this->flextype['parser']->decode($input, 'json', $cache);
+        return $this->flextype['serializer']->decode($input, 'json', $cache);
     }
 }

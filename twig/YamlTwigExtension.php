@@ -59,7 +59,7 @@ class YamlTwigExtension extends Twig_Extension
      */
     public function encode($input) : string
     {
-        return $this->flextype['parser']->encode($input, 'yaml');
+        return $this->flextype['serializer']->encode($input, 'yaml');
     }
 
     /**
@@ -67,6 +67,6 @@ class YamlTwigExtension extends Twig_Extension
      */
     public function decode(string $input, bool $cache = true)
     {
-        return $this->flextype['parser']->decode($input, 'yaml', $cache);
+        return $this->flextype['serializer']->decode($input, 'yaml', $cache);
     }
 }

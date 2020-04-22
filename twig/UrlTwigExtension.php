@@ -46,8 +46,8 @@ class UrlTwigExtension extends Twig_Extension
      */
     public function url() : string
     {
-        if ($this->flextype->registry->has('flextype.url') && $this->flextype->registry->get('flextype.url') != '') {
-            return $this->flextype->registry->get('flextype.url');
+        if ($this->flextype->registry->has('flextype.settings.url') && $this->flextype->registry->get('flextype.settings.url') != '') {
+            return $this->flextype->registry->get('flextype.settings.url');
         } else {
             return Uri::createFromEnvironment(new Environment($_SERVER))->getBaseUrl();
         }
