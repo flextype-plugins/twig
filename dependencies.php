@@ -26,7 +26,7 @@ $flextype['csrf'] = static function ($container) {
 };
 
 /**
- * Add site controller to Flextype container
+ * Add Twig service to Flextype container
  */
 $flextype['twig'] = static function ($container) {
 
@@ -39,7 +39,7 @@ $flextype['twig'] = static function ($container) {
                     ];
 
     // Create Twig View
-    $twig = new Twig(PATH['site'], $twigSettings);
+    $twig = new Twig(PATH['project'], $twigSettings);
 
     // Instantiate
     $router = $container->get('router');
@@ -58,7 +58,7 @@ $flextype['twig'] = static function ($container) {
         $twig_extension_class_name = $twig_extension . 'TwigExtension';
         $twig_extension_class_name_with_namespace = 'Flextype\\' . $twig_extension . 'TwigExtension';
 
-        if (file_exists(ROOT_DIR . '/site/plugins/twig/twig/' . $twig_extension_class_name . '.php')) {
+        if (file_exists(ROOT_DIR . '/project/plugins/twig/twig/' . $twig_extension_class_name . '.php')) {
             $twig->addExtension(new $twig_extension_class_name_with_namespace($container));
         }
     }

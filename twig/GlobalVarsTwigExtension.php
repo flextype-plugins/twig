@@ -34,7 +34,7 @@ class GlobalVarsTwigExtension extends Twig_Extension implements Twig_Extension_G
     public function getGlobals()
     {
         return [
-            'PATH_SITE' => PATH['site'],
+            'PATH_PROJECT' => PATH['project'],
             'PATH_CONFIG' => PATH['config'],
             'PATH_CACHE' => PATH['cache'],
             'PATH_LOGS' => PATH['logs'],
