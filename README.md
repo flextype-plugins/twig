@@ -19,7 +19,7 @@ The following dependencies need to be installed for Twig Plugin.
 ## Installation
 
 * Download & Install all required dependencies.
-* Download Admin Panel Plugin and unzip plugin to the folder /site/plugins/
+* Download Admin Panel Plugin and unzip plugin to the folder /project/plugins/
 
 ## Documentation
 
@@ -271,7 +271,7 @@ Renders the current path, with or without the query string.
 
 ### Twig Variables
 
-When you are designing a theme, Flextype gives you access to all sorts of objects and variables from within your Twig templates. The Twig templating framework provides powerful ways to read and manipulate these objects and variables.
+When you are working with twig templates, for e.g. when you designing a theme, Twig Plugin gives you access to all sorts of objects and variables available in Flextype within your Twig templates. The Twig templating framework provides powerful ways to read and manipulate these objects and variables.
 
 #### Core Objects
 
@@ -290,7 +290,7 @@ Usage:
 
 ##### entry
 
-Because Flextype is built using the structure defined in the `/site/entries/` folder, each entry is represented by a entry object.
+Because Flextype is built using the structure defined in the `/project/entries/` folder, each entry is represented by a entry object.
 
 The entry object is probably the most important object you will work with as it contains all the information about the current page you are currently on.
 
