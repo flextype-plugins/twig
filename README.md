@@ -1,7 +1,7 @@
 <h1 align="center">Twig Plugin for <a href="http://flextype.org/">Flextype</a></h1>
 
 <p align="center">
-<a href="https://github.com/flextype-plugins/twig/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-plugins/twig.svg?label=version"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/github/downloads/flextype-plugins/twig/total.svg?colorB=blue" alt="Total downloads"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/badge/Flextype-0.9.8-green.svg" alt="Flextype"></a> <a href="https://flextype.org/en/discord"><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&colorB=728ADA&label=Discord%20Chat" alt="Discord"></a>
+<a href="https://github.com/flextype-plugins/twig/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-plugins/twig.svg?label=version&color=black"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=black" alt="License"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/github/downloads/flextype-plugins/twig/total.svg?color=black" alt="Total downloads"></a> <a href="https://github.com/flextype-plugins/twig"><img src="https://img.shields.io/badge/Flextype-0.9.8-green.svg?color=black" alt="Flextype"></a> <a href="https://flextype.org/en/discord"><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&color=black&label=Discord%20Chat" alt="Discord"></a>
 </p>
 
 Twig plugin to present Twig template engine for Flextype.
@@ -71,7 +71,7 @@ Usage:
 Result:
 
 Build fast, flexible, easier to manage websites with
-<a href="http://flextype.org">Flextype</a>.
+<a href="https://flextype.org">Flextype</a>.
 
 Multiple filters can be chained. The output of one filter is applied to the next.
 
@@ -157,7 +157,7 @@ Usage:
 Result:
 
 Build fast, flexible, easier to manage websites with
-<a href="http://flextype.org">Flextype</a>.
+<a href="https://flextype.org">Flextype</a>.
 
 ##### filesystem_list_contents
 
