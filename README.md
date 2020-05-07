@@ -14,7 +14,7 @@ The following dependencies need to be installed for Twig Plugin.
 
 | Item | Version | Download |
 |---|---|---|
-| [flextype](https://github.com/flextype/flextype) | 0.9.8 | [download](https://github.com/flextype/flextype/releases/download/v0.9.8/flextype-0.9.8.zip) |
+| [flextype](https://github.com/flextype/flextype) | 0.9.8 | [download](https://github.com/flextype/flextype/releases) |
 
 ## Installation
 
