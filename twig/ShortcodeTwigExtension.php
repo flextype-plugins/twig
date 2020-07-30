@@ -7,12 +7,12 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype;
+namespace Flextype\Plugin\Twig\Twig;
 
 use Twig_Extension;
 use Twig_SimpleFilter;
 
-class ShortcodesTwigExtension extends Twig_Extension
+class ShortcodeTwigExtension extends Twig_Extension
 {
     /**
      * Flextype Dependency Container
@@ -45,7 +45,7 @@ class ShortcodesTwigExtension extends Twig_Extension
     public function shortcode($value) : string
     {
         if (!empty($value)) {
-            return $this->flextype->shortcodes->process($value);
+            return $this->flextype['shortcode']->parse($value);
         }
 
         return '';
