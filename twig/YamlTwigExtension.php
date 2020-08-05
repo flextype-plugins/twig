@@ -9,11 +9,9 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFilter;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
 
-class YamlTwigExtension extends Twig_Extension
+class YamlTwigExtension extends AbstractExtension
 {
     /**
      * Flextype Dependency Container
@@ -36,8 +34,8 @@ class YamlTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('yaml_decode', [$this, 'decode']),
-            new Twig_SimpleFunction('yaml_encode', [$this, 'encode']),
+            new \Twig\TwigFunction('yaml_decode', [$this, 'decode']),
+            new \Twig\TwigFunction('yaml_encode', [$this, 'encode']),
         ];
     }
 
@@ -49,8 +47,8 @@ class YamlTwigExtension extends Twig_Extension
     public function getFilters() : array
     {
         return [
-            new Twig_SimpleFilter('yaml_decode', [$this, 'decode']),
-            new Twig_SimpleFilter('yaml_encode', [$this, 'encode']),
+            new \Twig\TwigFilter('yaml_decode', [$this, 'decode']),
+            new \Twig\TwigFilter('yaml_encode', [$this, 'encode']),
         ];
     }
 

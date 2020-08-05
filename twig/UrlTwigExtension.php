@@ -9,12 +9,11 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
 use Slim\Http\Environment;
 use Slim\Http\Uri;
 
-class UrlTwigExtension extends Twig_Extension
+class UrlTwigExtension extends AbstractExtension
 {
     /**
      * Flextype Dependency Container
@@ -37,7 +36,7 @@ class UrlTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('url', [$this, 'url'], ['is_safe' => ['html']])
+            new \Twig\TwigFunction('url', [$this, 'url'], ['is_safe' => ['html']])
         ];
     }
 

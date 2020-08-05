@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 
-class CacheTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class CacheTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
      * Flextype Dependency Container
@@ -30,7 +30,7 @@ class CacheTwigExtension extends Twig_Extension implements Twig_Extension_Global
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'cache' => $this->flextype['cache'],

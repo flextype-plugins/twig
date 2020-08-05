@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_Extension_GlobalsInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 
-class EmitterTwigExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
+class EmitterTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
      * Flextype Dependency Container
@@ -30,7 +30,7 @@ class EmitterTwigExtension extends Twig_Extension implements Twig_Extension_Glob
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'emitter' => new EmitterTwig($this->flextype),
