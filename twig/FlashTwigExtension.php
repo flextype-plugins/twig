@@ -9,10 +9,9 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
 
-class FlashTwigExtension extends Twig_Extension
+class FlashTwigExtension extends AbstractExtension
 {
     /**
      * Flextype Dependency Container
@@ -35,7 +34,7 @@ class FlashTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('flash', [$this, 'getMessages']),
+            new \Twig\TwigFunction('flash', [$this, 'getMessages']),
         ];
     }
 

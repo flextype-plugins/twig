@@ -9,11 +9,9 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
-use Twig_Extension;
-use Twig_SimpleFilter;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
 
-class JsonTwigExtension extends Twig_Extension
+class JsonTwigExtension extends AbstractExtension
 {
     /**
      * Flextype Dependency Container
@@ -36,8 +34,8 @@ class JsonTwigExtension extends Twig_Extension
     public function getFunctions() : array
     {
         return [
-            new Twig_SimpleFunction('json_decode', [$this, 'decode']),
-            new Twig_SimpleFunction('json_encode', [$this, 'encode']),
+            new \Twig\TwigFunction('json_decode', [$this, 'decode']),
+            new \Twig\TwigFunction('json_encode', [$this, 'encode']),
         ];
     }
 
@@ -49,8 +47,8 @@ class JsonTwigExtension extends Twig_Extension
     public function getFilters() : array
     {
         return [
-            new Twig_SimpleFilter('json_decode', [$this, 'decode']),
-            new Twig_SimpleFilter('json_encode', [$this, 'encode']),
+            new \Twig\TwigFilter('json_decode', [$this, 'decode']),
+            new \Twig\TwigFilter('json_encode', [$this, 'encode']),
         ];
     }
 
