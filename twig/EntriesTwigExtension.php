@@ -56,9 +56,9 @@ class EntriesTwig
     /**
      * Fetch entry(entries)
      */
-    public function fetch(string $path, bool $collection = false, bool $deep = false) : array
+    public function fetch(string $path, bool $collection = false, array $filter = []) : array
     {
-        return $this->flextype['entries']->fetch($path, $collection, $deep);
+        return $this->flextype['entries']->fetch($path, $collection, $filter);
     }
 
     /**
@@ -72,8 +72,8 @@ class EntriesTwig
     /**
      * Fetch entries collection
      */
-    public function fetchCollection(string $path, bool $deep = false) : array
+    public function fetchCollection(string $path, array $filter = []) : array
     {
-        return $this->flextype['entries']->fetchCollection($path, $deep);
+        return $this->flextype['entries']->fetchCollection($path, $filter);
     }
 }
