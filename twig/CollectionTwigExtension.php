@@ -14,9 +14,9 @@ use Twig\Extension\AbstractExtension;
 class CollectionTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor

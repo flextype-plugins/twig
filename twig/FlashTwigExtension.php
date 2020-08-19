@@ -14,9 +14,9 @@ use Twig\Extension\AbstractExtension;
 class FlashTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -47,9 +47,9 @@ class FlashTwigExtension extends AbstractExtension
     public function getMessages(?string $key = null) : array
     {
         if ($key !== null) {
-            return $this->flextype['flash']->getMessage($key);
+            return $this->flextype->container('flash')->getMessage($key);
         }
 
-        return $this->flextype['flash']->getMessages();
+        return $this->flextype->container('flash')->getMessages();
     }
 }

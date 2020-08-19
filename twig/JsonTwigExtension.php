@@ -14,9 +14,9 @@ use Twig\Extension\AbstractExtension;
 class JsonTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -57,7 +57,7 @@ class JsonTwigExtension extends AbstractExtension
      */
     public function encode($input) : string
     {
-        return $this->flextype['json']->encode($input);
+        return $this->flextype->container('json')->encode($input);
     }
 
     /**
@@ -65,6 +65,6 @@ class JsonTwigExtension extends AbstractExtension
      */
     public function decode(string $input, bool $cache = true)
     {
-        return $this->flextype['json']->decode($input, $cache);
+        return $this->flextype->container('json')->decode($input, $cache);
     }
 }

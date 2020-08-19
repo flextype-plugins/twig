@@ -16,9 +16,9 @@ use Flextype\Component\Arrays\Arrays;
 class ArraysTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -42,9 +42,9 @@ class ArraysTwigExtension extends AbstractExtension implements GlobalsInterface
 class ArraysTwig
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
