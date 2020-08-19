@@ -14,9 +14,9 @@ use Twig\Extension\AbstractExtension;
 class YamlTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Dependency Container
+     * Flextype Application
      */
-    private $flextype;
+    protected $flextype;
 
     /**
      * Constructor
@@ -57,7 +57,7 @@ class YamlTwigExtension extends AbstractExtension
      */
     public function encode($input) : string
     {
-        return $this->flextype['yaml']->encode($input);
+        return $this->flextype->container('yaml')->encode($input);
     }
 
     /**
@@ -65,6 +65,6 @@ class YamlTwigExtension extends AbstractExtension
      */
     public function decode(string $input, bool $cache = true)
     {
-        return $this->flextype['yaml']->decode($input, $cache);
+        return $this->flextype->container('yaml')->decode($input, $cache);
     }
 }
