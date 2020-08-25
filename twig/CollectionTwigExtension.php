@@ -14,16 +14,11 @@ use Twig\Extension\AbstractExtension;
 class CollectionTwigExtension extends AbstractExtension
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**

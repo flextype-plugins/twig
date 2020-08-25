@@ -16,16 +16,11 @@ use Flextype\Component\Arrays\Arrays;
 class ArraysTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Flextype Application
-     */
-    protected $flextype;
-
-    /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
@@ -34,7 +29,7 @@ class ArraysTwigExtension extends AbstractExtension implements GlobalsInterface
     public function getGlobals() : array
     {
         return [
-            'arrays' => new ArraysTwig($this->flextype),
+            'arrays' => new ArraysTwig(),
         ];
     }
 }
@@ -44,14 +39,14 @@ class ArraysTwig
     /**
      * Flextype Application
      */
-    protected $flextype;
+
 
     /**
      * Constructor
      */
-    public function __construct($flextype)
+    public function __construct()
     {
-        $this->flextype = $flextype;
+
     }
 
     /**
