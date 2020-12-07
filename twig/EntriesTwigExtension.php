@@ -17,7 +17,7 @@ class EntriesTwigExtension extends AbstractExtension implements GlobalsInterface
     /**
      * Register Global variables in an extension
      */
-    public function getGlobals() : array
+    public function getGlobals(): array
     {
         return [
             'entries' => new EntriesTwig(),
@@ -31,7 +31,6 @@ class EntriesTwig
      * Flextype Application
      */
 
-
     /**
      * Constructor
      */
@@ -41,26 +40,18 @@ class EntriesTwig
     }
 
     /**
-     * Fetch entry(entries)
-     */
-    public function fetch(string $path, bool $collection = false, array $filter = []) : array
-    {
-        return flextype('entries')->fetch($path, $collection, $filter);
-    }
-
-    /**
      * Fetch single entry
      */
-    public function fetchSingle(string $path) : array
+    public function fetchSingle(string $id, array $options = [])
     {
-        return flextype('entries')->fetch($path);
+        return flextype('entries')->fetchSingle($id, $options);
     }
 
     /**
      * Fetch entries collection
      */
-    public function fetchCollection(string $path, array $filter = []) : array
+    public function fetchCollection(string $id, array $options = [])
     {
-        return flextype('entries')->fetchCollection($path, $filter);
+        return flextype('entries')->fetchCollection($id, $options);
     }
 }
