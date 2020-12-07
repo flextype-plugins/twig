@@ -30,8 +30,6 @@ class GlobalVarsTwigExtension extends AbstractExtension implements GlobalsInterf
     {
         return [
             'PATH_PROJECT' => PATH['project'],
-            'PATH_CACHE' => PATH['cache'],
-            'PATH_LOGS' => PATH['logs'],
             'PHP_VERSION' => PHP_VERSION
         ];
     }

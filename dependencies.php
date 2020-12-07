@@ -34,7 +34,7 @@ flextype()->container()['twig'] = static function () {
     // Get twig settings
     $twigSettings = [
                      'auto_reload' => flextype('registry')->get('plugins.twig.settings.auto_reload'),
-                     'cache' => flextype('registry')->get('plugins.twig.settings.cache') ? PATH['cache'] . '/twig' : false,
+                     'cache' => flextype('registry')->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
                      'debug' => flextype('registry')->get('plugins.twig.settings.debug'),
                      'charset' => flextype('registry')->get('plugins.twig.settings.charset')
                     ];
