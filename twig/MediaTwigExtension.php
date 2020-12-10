@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig\Twig;
 
+use Atomastic\Arrays\Arrays;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 

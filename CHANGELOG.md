@@ -1,3 +1,10 @@
+<a name="1.5.1"></a>
+# [1.5.1](https://github.com/flextype-plugins/twig/compare/v1.5.0...v1.5.1) (2020-12-10)
+
+### Bug fixes
+
+* **media** fix namespace for media
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/flextype-plugins/twig/compare/v1.4.0...v1.5.0) (2020-12-10)
 
