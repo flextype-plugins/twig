@@ -21,72 +21,90 @@ class MediaTwigExtension extends AbstractExtension implements GlobalsInterface
     public function getGlobals(): array
     {
         return [
-            'media_files' => new MediaFilesTwig(),
-            'media_files_meta' => new MediaFilesMetaTwig(),
-            'media_folders' => new MediaFoldersTwig(),
-            'media_folders_meta' => new MediaFoldersMetaTwig(),
+            'media' => new MediaTwig(),
         ];
     }
 }
 
-class MediaFilesTwig
+class MediaTwig
 {
-    public function fetchSingle(string $path, array $options = []): Arrays
+    /**
+     * Create a Media Files instance.
+     */
+    public function files(): MediaFiles
     {
-        return flextype('media_files')->fetchSingle($path, $options);
+        return new MediaTwigFiles();
     }
 
-    public function fetchCollection(string $path, array $options = []): Arrays
+    /**
+     * Create a Media Files instance.
+     */
+    public function folders(): MediaFolders
     {
-        return flextype('media_files')->fetchCollection($path, $options);
+        return new MediaTwigFolders();
+    }
+}
+
+class MediaTwigFiles
+{
+    public function meta(): MediaTwigFilesMeta
+    {
+        return new MediaTwigFilesMeta();
+    }
+
+    public function fetch(string $path, array $options = []): Arrays
+    {
+        return flextype('media')->files()->fetch($path, $options);
     }
 
     public function has(string $path): bool
     {
-        return flextype('media_files')->has($path);
+        return flextype('media')->files()->has($path);
     }
 
     public function getFileLocation(string $path): bool
     {
-        return flextype('media_files')->getFileLocation($path);
+        return flextype('media')->files()->getFileLocation($path);
     }
 }
 
-class MediaFilesMetaTwig
+
+class MediaTwigFilesMeta
 {
     public function getFileMetaLocation(string $path): bool
     {
-        return flextype('media_files_meta')->getFileMetaLocation($path);
+        return flextype('media')->files()->meta()->getFileMetaLocation($path);
     }
 }
 
-class MediaFoldersTwig
+class MediaTwigFolders
 {
-    public function fetchSingle(string $path, array $options = []): Arrays
+    public function meta(): MediaTwigFoldersMeta
     {
-        return flextype('media_folders')->fetchSingle($path, $options);
+        return new MediaTwigFoldersMeta();
     }
 
-    public function fetchCollection(string $path, array $options = []): Arrays
+    public function fetch(string $path, array $options = []): Arrays
     {
-        return flextype('media_folders')->fetchCollection($path, $options);
+        return flextype('media')->folders()->fetch($path, $options);
     }
 
     public function has(string $path): bool
     {
-        return flextype('media_folders')->has($path);
+        return flextype('media')->folders()->has($path);
     }
 
     public function getDirectoryLocation(string $path): bool
     {
-        return flextype('media_folders')->getDirectoryLocation($path);
+        return flextype('media')->folders()->getDirectoryLocation($path);
     }
 }
 
-class MediaFoldersMetaTwig
+
+class MediaTwigFoldersMeta
 {
     public function getDirectoryMetaLocation(string $path): bool
     {
-        return flextype('media_folders_meta')->getDirectoryMetaLocation($path);
+        return flextype('media')->folders()->meta()->getDirectoryMetaLocation($path);
     }
 }
