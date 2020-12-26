@@ -107,8 +107,8 @@ Which would cause JavaScript to execute on the page, even though it wasn’t par
 
 There are two cases where print statements will output content directly, without auto-escaping it first:
 
-When the content is deemed safe by the last tag or function that was called within the print statement (such as the markdown filter).
-When you explicitly mark the content as safe using a raw (opens new window) filter.
+* When the content is deemed safe by the last tag or function that was called within the print statement (such as the markdown filter).
+* When you explicitly mark the content as safe using a raw filter.
 
 #### Manual escaping
 
@@ -120,6 +120,7 @@ To do that, you could explicitly encode all HTML within the user-supplied conten
 {# Escape any HTML in the Content field, then format as Markdown #}
 {{ entry.content|escape|markdown }}
 ```
+
 
 #### Combining Strings
 
