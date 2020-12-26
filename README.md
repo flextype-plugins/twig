@@ -8,7 +8,9 @@ Twig plugin to present Twig template engine for Flextype.
 
 * [Dependencies](#dependencies)
 * [Installation](#installation)
-* [Introduction to Templating](#introduction-to-templating)
+* [Global Variables](#global-variables)
+* [Functions](#functions)
+* [Filters](#filters)
 * [License](#license)
 
 ## Dependencies
@@ -25,7 +27,7 @@ The following dependencies need to be installed for Twig Plugin.
 2. Create new folder `/project/plugins/twig`
 3. Download Twig Plugin and unzip plugin content to the folder `/project/plugins/twig`
 
-### Introduction to Templating
+### Introduction
 
 Twig is a modern template engine for PHP.
 
@@ -70,7 +72,7 @@ To output additional HTML code dynamically, use a print statement. They are wrap
 
 Don’t place a print statement (or any other Twig code) within another print statement. [See Combining Strings to learn how to combine strings with other expressions](#combining-strings).
 
-#### Auto-escaping
+#### <a name="auto-escaping"></a> Auto-escaping
 
 Most of the time, print statements will automatically HTML-encode the content before actually outputting it (called auto-escaping), which helps defend against cross-site scripting (XSS) vulnerabilities.
 
@@ -112,7 +114,7 @@ There are two cases where print statements will output content directly, without
 * When the content is deemed safe by the last tag or function that was called within the print statement (such as the markdown filter).
 * When you explicitly mark the content as safe using a raw filter.
 
-#### Manual escaping
+#### <a name="manual-escaping"></a> Manual escaping
 
 There are times where you may need to work with both trusted and untrusted content together. For example, let’s say you want to output user-supplied content as Markdown, but you want to ensure they haven’t put anything nefarious in there first.
 
@@ -123,8 +125,37 @@ To do that, you could explicitly encode all HTML within the user-supplied conten
 {{ entry.content|escape|markdown }}
 ```
 
+#### <a name=resources"></a> Resources
 
-#### Combining Strings
+* [Official Twig Documentation](http://twig.sensiolabs.org/documentation)
+* [Twig for Template Designers](http://twig.sensiolabs.org/doc/templates.html)
+* [Twig for Developers](http://twig.sensiolabs.org/doc/api.html)
+* [6 Minute Video Introduction to Twig](http://www.dev-metal.com/6min-video-introduction-twig-php-templating-engine/)
+* [Introduction to Twig](http://www.slideshare.net/markstory/introduction-to-twig)
+
+### <a name=global-variables"></a> Global Variables
+
+The following Flextype Twig Global variables are available in Flextype Twig Templates:
+
+| Variable | Description |
+|---|---|
+| _self | The current template name. |
+| _context | The currently-defined variables. |
+| _charset | The current charset. |
+| PATH_PROJECT | Project path (without trailing slash).. |
+| PHP_VERSION | PHP Version. |
+| flextype | Flextype object. |
+| filesystem | Filesystem object. |
+
+### <a name=functions"></a> Functions
+
+The following Flextype Twig Functions are available in Flextype Twig Templates:
+
+| Variable | Description |
+|---|---|
+| arrays | Returns a new arrsys object from the given elements. |
+| strings | Returns a new strings object from the given string. |
+| url | Returns application URL. |
 
 ## LICENSE
 [The MIT License (MIT)](https://github.com/flextype-plugins/twig/blob/master/LICENSE.txt)
