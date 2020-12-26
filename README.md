@@ -166,19 +166,19 @@ PHP Version.
 
 Returns Flextype object, which provides access points to various helper functions and objects for templates.
 
-| Twig Code | Links |
+| Objects | Available Methods |
 |---|---|
-| `{{ flextype.entries.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/entries#methods-fetch) |
-| `{{ flextype.media.files.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-files-fetch) |
-| `{{ flextype.media.files.meta.getFileMetaLocation() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-files-meta-getFileMetaLocation) |
-| `{{ flextype.media.folders.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-folders-fetch) |
-| `{{ flextype.media.folders.getDirectoryLocation() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-folders-getDirLocation) |
-| `{{ flextype.media.folders.getDirMetaLocation() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-folders-meta-getDirMetaLocation) |
-| `{{ flextype.registry }}` | [Documentation](https://docs.flextype.org/en/core/registry) |
-| `{{ flextype.parsers }}` | [Documentation](https://docs.flextype.org/en/core/parsers) |
-| `{{ flextype.serializers }}` | [Documentation](https://docs.flextype.org/en/core/serializers) |
-| `{{ flextype.cache }}` | [Documentation](https://www.phpfastcache.com) |
-| `{{ flextype.emitter }}` | [Documentation](https://event.thephpleague.com/2.0/) |
+| `flextype.entries` | [fetch()](https://docs.flextype.org/en/core/entries#methods-fetch)
+| `flextype.media.files` | [fetch()](https://docs.flextype.org/en/core/media#methods-files-fetch) |
+| `flextype.media.files.meta` | [getFileMetaLocation()](https://docs.flextype.org/en/core/media#methods-files-meta-getFileMetaLocation) |
+| `flextype.media.folders` | [fetch()](https://docs.flextype.org/en/core/media#methods-folders-fetch) |
+| `flextype.media.folders` | [getDirectoryLocation()](https://docs.flextype.org/en/core/media#methods-folders-getDirLocation) |
+| `flextype.media.folders` | [getDirMetaLocation()](https://docs.flextype.org/en/core/media#methods-folders-meta-getDirMetaLocation) |
+| `{{ flextype.registry }}` | [all](https://docs.flextype.org/en/core/registry) |
+| `{{ flextype.parsers }}` | [all](https://docs.flextype.org/en/core/parsers) |
+| `{{ flextype.serializers }}` | [all](https://docs.flextype.org/en/core/serializers) |
+| `{{ flextype.cache }}` | [all](https://www.phpfastcache.com) |
+| `{{ flextype.emitter }}` | [all](https://event.thephpleague.com/2.0/) |
 
 ### <a name="functions"></a> Functions
 
