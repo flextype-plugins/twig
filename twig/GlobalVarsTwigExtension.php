@@ -16,21 +16,13 @@ use const PHP_VERSION;
 class GlobalVarsTwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * Register Global variables in an extension
      */
     public function getGlobals() : array
     {
         return [
             'PATH_PROJECT' => PATH['project'],
-            'PHP_VERSION' => PHP_VERSION
+            'PHP_VERSION' => PHP_VERSION,
         ];
     }
 }
