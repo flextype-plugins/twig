@@ -22,6 +22,7 @@ class FiltersTwigExtension extends AbstractExtension
     {
         return [
             new \Twig\TwigFilter('shortcode', [$this, 'shortcode']),
+            new \Twig\TwigFilter('markdown', [$this, 'markdown']),
         ];
     }
 
