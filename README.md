@@ -144,7 +144,7 @@ The following Flextype Twig Global variables are available in Flextype Twig Temp
 | _charset | The current charset. |
 | PATH_PROJECT | Project path (without trailing slash). |
 | PHP_VERSION | PHP Version. |
-| flextype | Retursns Flextype object. |
+| flextype | Returns Flextype object. |
 
 #### PATH_PROJECT
 
@@ -185,10 +185,10 @@ The following Flextype Twig Functions are available in Flextype Twig Templates:
 
 | Variable | Description |
 |---|---|
-| arrays | Returns a new arrsys object from the given elements. |
+| arrays | Returns a new arrays object from the given elements. |
 | strings | Returns a new strings object from the given string. |
+| filesystem | Returns a new filesystem object from the given string. |
 | url | Returns application URL. |
-| filesystem | Filesystem function. |
 
 ## LICENSE
 [The MIT License (MIT)](https://github.com/flextype-plugins/twig/blob/master/LICENSE.txt)
