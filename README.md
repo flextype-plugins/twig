@@ -39,26 +39,28 @@ All Twig code follows a basic pattern that separates it from the surrounding HTM
 
 There are three types of delimiters that Twig looks out for:
 
-`{#` – Comments  
-`{%` – Tags  
-`{{` – Print statements  
+`{#` – [Comments](#comments)
+`{%` – [Tags](#tags)
+`{{` – [Print statements](#print-statements)
 
-#### Comments
+#### <a name="comments"></a> Comments
 
 Twig comments are wrapped in {# and #} delimiters. You can use them to leave little notes for yourself in the code.
 
 They are similar to HTML comments in that they won’t show up as rendered text in the browser. The difference is that they will never make it into the HTML source in the first place.
 
+```
 <!-- This will be visible in the HTML source -->
 {# This won’t! #}
+```
 
-#### Tags
+#### <a name="tags"></a> Tags
 
 Twig tags are wrapped in {% and %} delimiters, and are used to define the logic of your template, such as conditionals, loops, variable definitions, template includes, and other things.
 
 The syntax within the {% and %} delimiters varies from tag to tag, but they will always start with the same thing: the name of the tag.
 
-#### Print Statements
+#### <a name="print-statements"></a> Print Statements
 
 To output additional HTML code dynamically, use a print statement. They are wrapped in {{ and }} delimiters, and you can put just about anything inside them, as long as it can be treated as a string.
 
