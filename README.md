@@ -154,9 +154,9 @@ Project path (without trailing slash).
 {{ PATH_PROJECT }}
 ```
 
-#### PATH_PROJECT
+#### PHP_VERSION
 
-Project path (without trailing slash).
+PHP Version.
 
 ```
 {{ PHP_VERSION }}
@@ -169,7 +169,16 @@ Returns Flextype object, which provides access points to various helper function
 | Twig Code | Links |
 |---|---|
 | `{{ flextype.entries.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/entries#methods-fetch) |
-
+| `{{ flextype.media.files.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-files-fetch) |
+| `{{ flextype.media.files.meta.getFileMetaLocation() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-files-meta-getFileMetaLocation) |
+| `{{ flextype.media.folders.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-folders-fetch) |
+| `{{ flextype.media.folders.getDirectoryLocation() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-folders-getDirLocation) |
+| `{{ flextype.media.folders.getDirMetaLocation() }}` | [Documentation](https://docs.flextype.org/en/core/media#methods-folders-meta-getDirMetaLocation) |
+| `{{ flextype.registry }}` | [Documentation](https://docs.flextype.org/en/core/registry) |
+| `{{ flextype.parsers }}` | [Documentation](https://docs.flextype.org/en/core/parsers) |
+| `{{ flextype.serializers }}` | [Documentation](https://docs.flextype.org/en/core/serializers) |
+| `{{ flextype.cache }}` | [Documentation](https://www.phpfastcache.com) |
+| `{{ flextype.emitter }}` | [Documentation](https://event.thephpleague.com/2.0/) |
 
 ### <a name="functions"></a> Functions
 
