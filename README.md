@@ -39,9 +39,9 @@ All Twig code follows a basic pattern that separates it from the surrounding HTM
 
 There are three types of delimiters that Twig looks out for:
 
-`{#` – Comments
-`{%` – Tags
-`{{` – Print statements
+`{#` – Comments  
+`{%` – Tags  
+`{{` – Print statements  
 
 #### Comments
 
@@ -78,8 +78,8 @@ For example, let’s say you have a search results page, where the search query 
 {% set query = request.getQueryParam().q %}
 
 {% set entries = flextype.entries.fetch('blog', {'collection': true})
-                         .where('title', 'contains', query)
-                         .all() %}
+                                 .where('title', 'contains', query)
+                                 .all() %}
 
 {% if entries %}
   <h3>Search Results</h3>
@@ -95,10 +95,16 @@ For example, let’s say you have a search results page, where the search query 
 
 If it weren’t for auto-escaping, a search for <script>alert('Danger!!!')</script> would result in this HTML:
 
+```
 <p>Sorry, no results for <strong><script>alert('Danger!!!')</script></strong>.</p>
+```
+
 Which would cause JavaScript to execute on the page, even though it wasn’t part of the original Twig template. But thanks to auto-escaping, you’d actually end up with this HTML:
 
+```
 <p>Sorry, no results for <strong>&lt;script&gt;alert('Danger!!!')&lt;/script&gt;</strong>.</p>
+```
+
 There are two cases where print statements will output content directly, without auto-escaping it first:
 
 When the content is deemed safe by the last tag or function that was called within the print statement (such as the markdown filter).
@@ -111,7 +117,7 @@ There are times where you may need to work with both trusted and untrusted conte
 To do that, you could explicitly encode all HTML within the user-supplied content using the escape (opens new window) filter, before passing it to the markdown filter:
 
 ```
-{# Escape any HTML in the Body field, then format as Markdown #}
+{# Escape any HTML in the Content field, then format as Markdown #}
 {{ entry.content|escape|markdown }}
 ```
 
