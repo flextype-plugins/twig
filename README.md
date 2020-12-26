@@ -168,7 +168,7 @@ Returns Flextype object, which provides access points to various helper function
 
 | Twig Code | Links |
 |---|---|
-| {{ flextype.entries.fetch() }} | [Documentation](https://docs.flextype.org/en/core/entries#methods-fetch) |
+| `{{ flextype.entries.fetch() }}` | [Documentation](https://docs.flextype.org/en/core/entries#methods-fetch) |
 
 
 ### <a name="functions"></a> Functions
