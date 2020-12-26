@@ -94,7 +94,7 @@ class FlextypeMediaTwig
     /**
      * Create a Media Files instance.
      */
-    public function files(): MediaFiles
+    public function files(): FlextypeMediaTwigFiles
     {
         return new FlextypeMediaTwigFiles();
     }
@@ -102,7 +102,7 @@ class FlextypeMediaTwig
     /**
      * Create a Media Files instance.
      */
-    public function folders(): MediaFolders
+    public function folders(): FlextypeMediaTwigFolders
     {
         return new FlextypeMediaTwigFolders();
     }
@@ -115,7 +115,7 @@ class FlextypeMediaTwigFiles
     /**
      * Create a Media Files Meta instance.
      */
-    public function meta(): MediaTwigFilesMeta
+    public function meta(): FlextypeMediaTwigFilesMeta
     {
         return new FlextypeMediaTwigFilesMeta();
     }
@@ -190,7 +190,7 @@ class FlextypeMediaTwigFolders
     /**
      * Create a Media Folders Meta instance.
      */
-    public function meta(): MediaTwigFoldersMeta
+    public function meta(): FlextypeMediaTwigFoldersMeta
     {
         return new FlextypeMediaTwigFoldersMeta();
     }
