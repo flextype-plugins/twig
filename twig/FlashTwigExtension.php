@@ -14,14 +14,6 @@ use Twig\Extension\AbstractExtension;
 class FlashTwigExtension extends AbstractExtension
 {
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-
-    }
-
-    /**
      * Returns a list of functions to add to the existing list.
      *
      * @return array
