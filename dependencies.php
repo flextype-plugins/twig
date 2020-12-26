@@ -61,7 +61,7 @@ flextype()->container()['twig'] = static function () {
 
         if (file_exists(ROOT_DIR . '/project/plugins/twig/twig/' . $twig_extension_class_name . '.php')) {
 
-            if ($twig_extension == 'Flash') {
+            if ($twig_extension == 'Flextype') {
                 flextype()->container()['flash'] = static function () {
                     return new Messages();
                 };
