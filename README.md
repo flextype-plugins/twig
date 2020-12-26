@@ -171,14 +171,13 @@ Returns Flextype object, which provides access points to various helper function
 | `flextype.entries` | [fetch()](https://docs.flextype.org/en/core/entries#methods-fetch)
 | `flextype.media.files` | [fetch()](https://docs.flextype.org/en/core/media#methods-files-fetch) |
 | `flextype.media.files.meta` | [getFileMetaLocation()](https://docs.flextype.org/en/core/media#methods-files-meta-getFileMetaLocation) |
-| `flextype.media.folders` | [fetch()](https://docs.flextype.org/en/core/media#methods-folders-fetch) |
-| `flextype.media.folders` | [getDirectoryLocation()](https://docs.flextype.org/en/core/media#methods-folders-getDirLocation) |
-| `flextype.media.folders` | [getDirMetaLocation()](https://docs.flextype.org/en/core/media#methods-folders-meta-getDirMetaLocation) |
-| `{{ flextype.registry }}` | [all](https://docs.flextype.org/en/core/registry) |
-| `{{ flextype.parsers }}` | [all](https://docs.flextype.org/en/core/parsers) |
-| `{{ flextype.serializers }}` | [all](https://docs.flextype.org/en/core/serializers) |
-| `{{ flextype.cache }}` | [all](https://www.phpfastcache.com) |
-| `{{ flextype.emitter }}` | [all](https://event.thephpleague.com/2.0/) |
+| `flextype.media.folders` | [fetch()](https://docs.flextype.org/en/core/media#methods-folders-fetch) [getDirectoryLocation()](https://docs.flextype.org/en/core/media#methods-folders-getDirLocation) |
+| `flextype.media.folders.meta` | [getDirMetaLocation()](https://docs.flextype.org/en/core/media#methods-folders-meta-getDirMetaLocation) |
+| `{{ flextype.registry }}` | [all methods available](https://docs.flextype.org/en/core/registry) |
+| `{{ flextype.parsers }}` | [all methods available](https://docs.flextype.org/en/core/parsers) |
+| `{{ flextype.serializers }}` | [all methods available](https://docs.flextype.org/en/core/serializers) |
+| `{{ flextype.cache }}` | [all methods available](https://www.phpfastcache.com) |
+| `{{ flextype.emitter }}` | [all methods available](https://event.thephpleague.com/2.0/) |
 
 ### <a name="functions"></a> Functions
 
