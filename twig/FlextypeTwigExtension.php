@@ -65,6 +65,11 @@ class FlextypeTwig
     {
         return flextype('emitter');
     }
+
+    public function slugify()
+    {
+        return flextype('slugify');
+    }
 }
 
 class FlextypeEntriesTwig
