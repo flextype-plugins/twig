@@ -125,7 +125,7 @@ To do that, you could explicitly encode all HTML within the user-supplied conten
 {{ entry.content|escape|markdown }}
 ```
 
-#### <a name=resources"></a> Resources
+#### <a name="resources"></a> Resources
 
 * [Official Twig Documentation](http://twig.sensiolabs.org/documentation)
 * [Twig for Template Designers](http://twig.sensiolabs.org/doc/templates.html)
@@ -133,7 +133,7 @@ To do that, you could explicitly encode all HTML within the user-supplied conten
 * [6 Minute Video Introduction to Twig](http://www.dev-metal.com/6min-video-introduction-twig-php-templating-engine/)
 * [Introduction to Twig](http://www.slideshare.net/markstory/introduction-to-twig)
 
-### <a name=global-variables"></a> Global Variables
+### <a name="global-variables"></a> Global Variables
 
 The following Flextype Twig Global variables are available in Flextype Twig Templates:
 
@@ -147,7 +147,7 @@ The following Flextype Twig Global variables are available in Flextype Twig Temp
 | flextype | Flextype object. |
 | filesystem | Filesystem object. |
 
-### <a name=functions"></a> Functions
+### <a name="functions"></a> Functions
 
 The following Flextype Twig Functions are available in Flextype Twig Templates:
 
