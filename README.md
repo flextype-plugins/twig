@@ -144,7 +144,7 @@ The following Flextype Twig Global variables are available in Flextype Twig Temp
 | _charset | The current charset. |
 | PATH_PROJECT | Project path (without trailing slash). |
 | PHP_VERSION | PHP Version. |
-| flextype | Flextype object. |
+| flextype | Retursns Flextype object. |
 
 #### PATH_PROJECT
 
@@ -162,9 +162,14 @@ Project path (without trailing slash).
 {{ PHP_VERSION }}
 ```
 
-### flextype
+#### flextype
 
-PHP Version.
+Returns Flextype object, which provides access points to various helper functions and objects for templates.
+
+| Twig Code | Links |
+|---|---|
+| {{ flextype.entries.fetch() }} | [Documentation](https://docs.flextype.org/en/core/entries#methods-fetch) |
+
 
 ### <a name="functions"></a> Functions
 
