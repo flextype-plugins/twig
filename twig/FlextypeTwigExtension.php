@@ -70,6 +70,11 @@ class FlextypeTwig
     {
         return flextype('slugify');
     }
+
+    public function flash()
+    {
+        return flextype('flash');
+    }
 }
 
 class FlextypeEntriesTwig
