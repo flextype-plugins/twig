@@ -14,15 +14,17 @@ use Twig\Extension\GlobalsInterface;
 use Atomastic\Macroable\Macroable;
 use Symfony\Component\Finder\Finder;
 
-class FilesystemTwigExtension extends AbstractExtension implements GlobalsInterface
+class FilesystemTwigExtension extends AbstractExtension
 {
     /**
-     * Register Global variables in an extension
+     * Callback for twig.
+     *
+     * @return array
      */
-    public function getGlobals() : array
+    public function getFunctions() : array
     {
         return [
-            'filesystem' => new FilesystemTwig(),
+            new \Twig\TwigFunction('filesystem', function() { return new FilesystemTwig(); }),
         ];
     }
 }
