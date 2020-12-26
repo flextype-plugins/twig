@@ -20,7 +20,7 @@ auto_reload: true
 cache: true
 debug: false
 charset: "UTF-8"
-extensions: ['I18n', 'Filesystem', 'Csrf', 'GlobalVars', 'Url', 'Strings', 'Arrays', 'Flash', 'Flextype', 'Filters']
+extensions: ['I18n', 'Filesystem', 'Csrf', 'Constants', 'Url', 'Strings', 'Arrays', 'Flash', 'Flextype', 'Filters']
 
 # Twig plugin priority
 priority: 100
