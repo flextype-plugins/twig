@@ -23,4 +23,4 @@ charset: "UTF-8"
 extensions: ['I18n', 'Filesystem', 'Csrf', 'Constants', 'Url', 'Strings', 'Arrays', 'Flextype', 'Filters']
 
 # Twig plugin priority
-priority: 100
+priority: 0
