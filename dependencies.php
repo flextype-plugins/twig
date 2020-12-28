@@ -27,25 +27,18 @@ flextype()->container()['csrf'] = fn() => new Guard();
 /**
  * Add Twig service to Flextype container
  */
-flextype()->container()['twig'] = static function () {
-
-    // Get twig settings
-    $twigSettings = [
-                     'auto_reload' => flextype('registry')->get('plugins.twig.settings.auto_reload'),
-                     'cache' => flextype('registry')->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
-                     'debug' => flextype('registry')->get('plugins.twig.settings.debug'),
-                     'charset' => flextype('registry')->get('plugins.twig.settings.charset')
-                    ];
+flextype()->container()['twig'] = function () {
 
     // Create Twig View
-    $twig = new Twig(PATH['project'], $twigSettings);
-
-    // Instantiate
-    $router = flextype('router');
-    $uri    = Uri::createFromEnvironment(new Environment($_SERVER));
+    $twig = new Twig(PATH['project'],
+                        ['auto_reload' => flextype('registry')->get('plugins.twig.settings.auto_reload'),
+                         'cache' => flextype('registry')->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
+                         'debug' => flextype('registry')->get('plugins.twig.settings.debug'),
+                         'charset' => flextype('registry')->get('plugins.twig.settings.charset')]);
 
     // Add Twig Extension
-    $twig->addExtension(new TwigExtension($router, $uri));
+    $twig->addExtension(new TwigExtension(flextype('router'),
+                                          Uri::createFromEnvironment(new Environment($_SERVER))));
 
     // Add Twig Debug Extension
     $twig->addExtension(new DebugExtension());

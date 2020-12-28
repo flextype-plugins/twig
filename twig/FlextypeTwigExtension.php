@@ -38,7 +38,7 @@ class FlextypeTwig
 
     public function media()
     {
-        return new FlextypeMediaTwig();
+        return new MediaTwig();
     }
 
     public function registry()
@@ -97,16 +97,16 @@ class EntriesTwig
     }
 }
 
-class FlextypeMediaTwig
+class MediaTwig
 {
     use Macroable;
 
     /**
      * Create a Media Files instance.
      */
-    public function files(): MediaTwigFiles
+    public function files(): MediaFilesTwig
     {
-        return new MediaTwigFiles();
+        return new MediaFilesTwig();
     }
 
     /**
@@ -118,7 +118,7 @@ class FlextypeMediaTwig
     }
 }
 
-class MediaTwigFiles
+class MediaFilesTwig
 {
     use Macroable;
 
