@@ -190,6 +190,16 @@ The following Flextype Twig Functions are available in Flextype Twig Templates:
 | filesystem | Returns a new filesystem object from the given string. |
 | url | Returns application URL. |
 
+### <a name="filters"></a> Filters
+
+The following Flextype Twig Filters are available in Flextype Twig Templates:
+
+| Variable | Description |
+|---|---|
+| __ | Translate string |
+| shortcode | Shortcode parser |
+| markdown | Markdown parser |
+
 ## LICENSE
 [The MIT License (MIT)](https://github.com/flextype-plugins/twig/blob/master/LICENSE.txt)
 Copyright (c) 2021 [Sergey Romanenko](https://github.com/Awilum)
