@@ -22,9 +22,7 @@ use Twig\Extension\DebugExtension;
 /**
  * Add CSRF (cross-site request forgery) protection service to Flextype container
  */
-flextype()->container()['csrf'] = static function (){
-    return new Guard();
-};
+flextype()->container()['csrf'] = fn() => new Guard();
 
 /**
  * Add Twig service to Flextype container
@@ -53,21 +51,19 @@ flextype()->container()['twig'] = static function () {
     $twig->addExtension(new DebugExtension());
 
     // Load Flextype Twig extensions from directory /flextype/twig/ based on settings.twig.extensions array
-    $twig_extensions = flextype('registry')->get('plugins.twig.settings.extensions');
+    $twigExtensions = flextype('registry')->get('plugins.twig.settings.extensions');
 
-    foreach ($twig_extensions as $twig_extension) {
-        $twig_extension_class_name = $twig_extension . 'TwigExtension';
-        $twig_extension_class_name_with_namespace = 'Flextype\\Plugin\\Twig\\Twig\\' . $twig_extension . 'TwigExtension';
+    foreach ($twigExtensions as $twigExtension) {
+        $twigExtensionClassName = $twigExtension . 'TwigExtension';
+        $twigExtensionClassNameWithNamespace = 'Flextype\\Plugin\\Twig\\Twig\\' . $twigExtension . 'TwigExtension';
 
-        if (file_exists(ROOT_DIR . '/project/plugins/twig/twig/' . $twig_extension_class_name . '.php')) {
+        if (file_exists(ROOT_DIR . '/project/plugins/twig/twig/' . $twigExtensionClassName . '.php')) {
 
-            if ($twig_extension == 'Flextype') {
-                flextype()->container()['flash'] = static function () {
-                    return new Messages();
-                };
+            if ($twigExtension == 'Flextype') {
+                flextype()->container()['flash'] = fn() => new Messages();
             }
 
-            $twig->addExtension(new $twig_extension_class_name_with_namespace());
+            $twig->addExtension(new $twigExtensionClassNameWithNamespace());
         }
     }
 
