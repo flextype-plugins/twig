@@ -33,7 +33,7 @@ class FlextypeTwig
 
     public function entries()
     {
-        return new FlextypeEntriesTwig();
+        return new EntriesTwig();
     }
 
     public function media()
@@ -77,7 +77,7 @@ class FlextypeTwig
     }
 }
 
-class FlextypeEntriesTwig
+class EntriesTwig
 {
     use Macroable;
 
@@ -104,30 +104,30 @@ class FlextypeMediaTwig
     /**
      * Create a Media Files instance.
      */
-    public function files(): FlextypeMediaTwigFiles
+    public function files(): MediaTwigFiles
     {
-        return new FlextypeMediaTwigFiles();
+        return new MediaTwigFiles();
     }
 
     /**
      * Create a Media Files instance.
      */
-    public function folders(): FlextypeMediaTwigFolders
+    public function folders(): MediaFoldersTwig
     {
-        return new FlextypeMediaTwigFolders();
+        return new MediaFoldersTwig();
     }
 }
 
-class FlextypeMediaTwigFiles
+class MediaTwigFiles
 {
     use Macroable;
 
     /**
      * Create a Media Files Meta instance.
      */
-    public function meta(): FlextypeMediaTwigFilesMeta
+    public function meta(): MediaFilesMetaTwig
     {
-        return new FlextypeMediaTwigFilesMeta();
+        return new MediaFilesMetaTwig();
     }
 
     /**
@@ -174,7 +174,7 @@ class FlextypeMediaTwigFiles
     }
 }
 
-class FlextypeMediaTwigFilesMeta
+class MediaFilesMetaTwig
 {
     use Macroable;
 
@@ -193,16 +193,16 @@ class FlextypeMediaTwigFilesMeta
     }
 }
 
-class FlextypeMediaTwigFolders
+class MediaFoldersTwig
 {
     use Macroable;
 
     /**
      * Create a Media Folders Meta instance.
      */
-    public function meta(): FlextypeMediaTwigFoldersMeta
+    public function meta(): MediaFoldersMetaTwig
     {
-        return new FlextypeMediaTwigFoldersMeta();
+        return new MediaFoldersMetaTwig();
     }
 
     /**
@@ -235,7 +235,7 @@ class FlextypeMediaTwigFolders
     }
 }
 
-class FlextypeMediaTwigFoldersMeta
+class MediaFoldersMetaTwig
 {
     use Macroable;
 
