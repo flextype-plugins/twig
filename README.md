@@ -146,23 +146,10 @@ The following Flextype Twig Global variables are available in Flextype Twig Temp
 | PHP_VERSION | PHP Version. |
 | flextype | Returns Flextype object. |
 
-<<<<<<< HEAD
-Registry stored all flextype, themes and plugins settings.<br>
-You can access and manipulate Flextype registry via the registry object.
-=======
 #### PATH_PROJECT
->>>>>>> dev
 
 Project path (without trailing slash).
 
-<<<<<<< HEAD
-```twig
-{{ registry.dump() }}
-{{ registry.set() }}
-{{ registry.has() }}
-{{ registry.get() }}
-=======
->>>>>>> dev
 ```
 {{ PATH_PROJECT }}
 ```
@@ -177,11 +164,7 @@ PHP Version.
 
 #### flextype
 
-<<<<<<< HEAD
-##### arrays
-=======
 Returns Flextype object, which provides access points to various helper functions and objects for templates.
->>>>>>> dev
 
 | Objects | Available Methods |
 |---|---|
@@ -200,17 +183,6 @@ Returns Flextype object, which provides access points to various helper function
 
 The following Flextype Twig Functions are available in Flextype Twig Templates:
 
-<<<<<<< HEAD
-```twig
-{% set new_array = arrays(old.array).sortBy('title') %}
-```
-
-#### Global Variables
-
-```twig
-{{ PATH_PROJECT }} {# Returns the path to the project directory (without trailing slash). #}
-{{ PHP_VERSION }} {# Returns the php version #}
-```
 | Variable | Description |
 |---|---|
 | arrays | Returns a new arrays object from the given elements. |
