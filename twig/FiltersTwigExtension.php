@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Flextype (http://flextype.org)
+ * Flextype (https://flextype.org)
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
@@ -11,16 +11,8 @@ namespace Flextype\Plugin\Twig\Twig;
 
 use Twig\Extension\AbstractExtension;
 
-class ShortcodeTwigExtension extends AbstractExtension
+class FiltersTwigExtension extends AbstractExtension
 {
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-
-    }
-
     /**
      * Returns a list of filters to add to the existing list.
      *
@@ -30,18 +22,17 @@ class ShortcodeTwigExtension extends AbstractExtension
     {
         return [
             new \Twig\TwigFilter('shortcode', [$this, 'shortcode']),
+            new \Twig\TwigFilter('markdown', [$this, 'markdown']),
         ];
     }
 
-    /**
-     * Shorcode process
-     */
     public function shortcode($value) : string
     {
-        if (!empty($value)) {
-            return flextype('parsers')->shortcode()->process($value);
-        }
+        return !empty($value) ? flextype('parsers')->shortcode()->process($value) : '';
+    }
 
-        return '';
+    public function markdown($value) : string
+    {
+        return !empty($value) ? flextype('parsers')->markdown()->process($value) : '';
     }
 }

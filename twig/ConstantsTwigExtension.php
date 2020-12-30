@@ -11,24 +11,18 @@ namespace Flextype\Plugin\Twig\Twig;
 
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
+use const PHP_VERSION;
 
-class CacheTwigExtension extends AbstractExtension implements GlobalsInterface
+class ConstantsTwigExtension extends AbstractExtension implements GlobalsInterface
 {
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-
-    }
-
     /**
      * Register Global variables in an extension
      */
     public function getGlobals() : array
     {
         return [
-            'cache' => flextype('cache'),
+            'PATH_PROJECT' => PATH['project'],
+            'PHP_VERSION' => PHP_VERSION,
         ];
     }
 }
