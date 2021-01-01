@@ -33,6 +33,6 @@ class FiltersTwigExtension extends AbstractExtension
 
     public function markdown($value) : string
     {
-        return !empty($value) ? flextype('parsers')->markdown()->process($value) : '';
+        return !empty($value) ? flextype('parsers')->markdown()->parse($value) : '';
     }
 }
