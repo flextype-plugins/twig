@@ -50,7 +50,6 @@ flextype()->container()['twig'] = function () {
                 flextype()->container()['flash'] = fn() => new Messages();
             }
 
-
             $twig->addExtension(new $twigExtensionClassNameWithNamespace());
 
         }
