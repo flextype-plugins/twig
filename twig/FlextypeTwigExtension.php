@@ -75,6 +75,11 @@ class FlextypeTwig
     {
         return flextype('flash');
     }
+
+    public function csrf()
+    {
+        return flextype('csrf');
+    }
 }
 
 class EntriesTwig
