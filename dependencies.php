@@ -16,11 +16,7 @@ use Slim\Http\Uri;
 use Slim\Csrf\Guard;
 use Slim\Flash\Messages;
 use Twig\Extension\DebugExtension;
-
-/**
- * Add CSRF (cross-site request forgery) protection service to Flextype container
- */
-flextype()->container()['csrf'] = fn() => new Guard();
+use Twig\Extension\StringLoaderExtension;
 
 /**
  * Add Twig service to Flextype container
@@ -36,6 +32,7 @@ flextype()->container()['twig'] = function () {
 
     // Add Twig Debug Extension
     $twig->addExtension(new DebugExtension());
+    $twig->addExtension(new StringLoaderExtension());
 
     // Load Flextype Twig extensions from directory /flextype/twig/ based on settings.twig.extensions array
     $twigExtensions = flextype('registry')->get('plugins.twig.settings.extensions');
@@ -51,7 +48,6 @@ flextype()->container()['twig'] = function () {
             }
 
             $twig->addExtension(new $twigExtensionClassNameWithNamespace());
-
         }
     }
 
