@@ -100,6 +100,20 @@ class EntriesTwig
     {
         return flextype('entries')->fetch($id, $options);
     }
+
+    /**
+     * Check whether entry exists
+     *
+     * @param string $id Unique identifier of the entry(entries).
+     *
+     * @return bool True on success, false on failure.
+     *
+     * @access public
+     */
+    public function has(string $id): bool
+    {
+        return flextype('entries')->has($id);
+    }
 }
 
 class MediaTwig
