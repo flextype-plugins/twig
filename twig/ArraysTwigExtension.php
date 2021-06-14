@@ -22,6 +22,9 @@ class ArraysTwigExtension extends AbstractExtension
     {
         return [
             new \Twig\TwigFunction('arrays', 'arrays'),
+            new \Twig\TwigFunction('arraysFromJson', 'arraysFromJson'),
+            new \Twig\TwigFunction('arraysFromString', 'arraysFromString'),
+            new \Twig\TwigFunction('arraysWithRange', 'arraysWithRange')
         ];
     }
 }
