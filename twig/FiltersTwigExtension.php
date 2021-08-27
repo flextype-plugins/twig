@@ -28,11 +28,11 @@ class FiltersTwigExtension extends AbstractExtension
 
     public function shortcode($value): string
     {
-        return !empty($value) ? flextype('parsers')->shortcode()->process($value) : '';
+        return !empty($value) ? parsers()->shortcode()->process($value) : '';
     }
 
     public function markdown($value): string
     {
-        return !empty($value) ? flextype('parsers')->markdown()->parse($value) : '';
+        return !empty($value) ? parsers()->markdown()->parse($value) : '';
     }
 }
