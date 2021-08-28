@@ -12,11 +12,17 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig;
 
 use function is_file;
+use Slim\Http\Environment;
+use Slim\Http\Uri;
+use Slim\Csrf\Guard;
+use Slim\Flash\Messages;
+use Twig\Extension\DebugExtension;
+use Twig\Extension\StringLoaderExtension;
 
 /**
  * Ensure vendor libraries exist
  */
-! is_file($twig_autoload = __DIR__ . '/vendor/autoload.php') and exit('Please run: <i>composer install</i> for twig plugin');
+! is_file($twigAutoload = __DIR__ . '/vendor/autoload.php') and exit('Please run: <i>composer install</i> for twig plugin');
 
 /**
  * Register The Auto Loader
@@ -27,14 +33,43 @@ use function is_file;
  * loading any of our classes later on. It feels nice to relax.
  * Register The Auto Loader
  */
-$twig_loader = require_once $twig_autoload;
+$twigLoader = require_once $twigAutoload;
 
 /**
- * Include Twig
+ * Add Twig service to Flextype container
  */
-include_once 'Twig.php';
+container()->set('twig', function () {
 
-/**
- * Include dependencies
- */
-include_once 'dependencies.php';
+    // Create Twig View
+    $twig = new Twig(PATH['project'],
+                        ['auto_reload' => registry()->get('plugins.twig.settings.auto_reload'),
+                         'cache' => registry()->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
+                         'debug' => registry()->get('plugins.twig.settings.debug'),
+                         'charset' => registry()->get('plugins.twig.settings.charset')]);
+
+    // Add Twig Extensions
+    $twig->addExtension(new DebugExtension());
+    $twig->addExtension(new StringLoaderExtension());
+
+    // Load Flextype Twig extensions from directory /flextype/twig/ based on settings.twig.extensions array
+    $twigExtensions = registry()->get('plugins.twig.settings.extensions');
+
+    foreach ($twigExtensions as $twigExtension) {
+        $twigExtensionClassName = $twigExtension . 'TwigExtension';
+        $twigExtensionClassNameWithNamespace = 'Flextype\\Plugin\\Twig\\Extension\\' . $twigExtension . 'TwigExtension';
+
+        if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/Extension/' . $twigExtensionClassName . '.php')) {
+
+            if ($twigExtension == 'Url') continue;
+
+            if ($twigExtension == 'Flextype') {
+                container()->set('flash', new Messages());
+            }
+
+            $twig->addExtension(new $twigExtensionClassNameWithNamespace());
+        }
+    }
+
+    // Return view
+    return $twig;
+});
