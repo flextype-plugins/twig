@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype\Plugin\Twig\Twig;
+namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Slim\Http\Environment;
@@ -134,8 +134,8 @@ class UrlTwigExtension extends AbstractExtension
      */
     public function getUrl() : string
     {
-        if (flextype('registry')->has('flextype.settings.url') && flextype('registry')->get('flextype.settings.url') != '') {
-            return flextype('registry')->get('flextype.settings.url');
+        if (registry()->has('flextype.settings.url') && registry()->get('flextype.settings.url') != '') {
+            return registry()->get('flextype.settings.url');
         } else {
             return Uri::createFromEnvironment(new Environment($_SERVER))->getBaseUrl();
         }

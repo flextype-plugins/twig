@@ -7,9 +7,11 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype\Plugin\Twig\Twig;
+namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
+
+use Atomastic\Arrays\Arrays;
 
 class ArraysTwigExtension extends AbstractExtension
 {

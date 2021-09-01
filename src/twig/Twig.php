@@ -2,9 +2,11 @@
 
 namespace Flextype\Plugin\Twig;
 
+use ArrayAccess;
 use Psr\Http\Message\ResponseInterface;
+use Twig\Environment;
 
-class Twig implements \ArrayAccess
+class Twig implements ArrayAccess
 {
     /**
      * Twig loader
@@ -27,20 +29,35 @@ class Twig implements \ArrayAccess
      */
     protected $defaultVariables = [];
 
-    /********************************************************************************
-     * Constructors and service provider registration
-     *******************************************************************************/
-
     /**
      * Create new Twig view
      *
-     * @param string|array $path     Path(s) to templates directory
+     * @param string|array $path     Path(s) to templates directory.
      * @param array        $settings Twig environment settings
      */
-    public function __construct($path, $settings = [])
+    public function __construct($path, array $settings = [])
     {
-        $this->loader = $this->createLoader(is_string($path) ? [$path] : $path);
-        $this->environment = new \Twig\Environment($this->loader, $settings);
+        $this->loader      = $this->createLoader(is_string($path) ? [$path] : $path);
+        $this->environment = new Environment($this->loader, $settings);
+    }
+
+    /**
+     * @param ServerRequestInterface $request
+     * @param string                 $attributeName
+     *
+     * @return Twig
+     */
+    public static function fromRequest(ServerRequestInterface $request, string $attributeName = 'view'): self
+    {
+        $twig = $request->getAttribute($attributeName);
+
+        if ($twig === null || !($twig instanceof self)) {
+            throw new RuntimeException(
+                'Twig could not be found in the server request attributes using the key "'. $attributeName .'".'
+            );
+        }
+
+        return $twig;
     }
 
     /********************************************************************************
@@ -86,8 +103,9 @@ class Twig implements \ArrayAccess
      */
     public function fetch($template, $data = [])
     {
+        $start = microtime(true);
         $data = array_merge($this->defaultVariables, $data);
-
+        echo "Fetch: " . sprintf(" %01.4f", microtime(true) - $start) . " ";
         return $this->environment->render($template, $data);
     }
 
@@ -117,8 +135,9 @@ class Twig implements \ArrayAccess
      */
     public function fetchFromString($string ="", $data = [])
     {
+        $start = microtime(true);
         $data = array_merge($this->defaultVariables, $data);
-
+        echo "fetchFromString: " . sprintf(" %01.4f", microtime(true) - $start) . " ";
         return $this->environment->createTemplate($string)->render($data);
     }
 
@@ -132,8 +151,9 @@ class Twig implements \ArrayAccess
      */
     public function render(ResponseInterface $response, $template, $data = [])
     {
+        $start = microtime(true);
          $response->getBody()->write($this->fetch($template, $data));
-
+         echo "render: " . sprintf(" %01.4f", microtime(true) - $start) . " ";
          return $response;
     }
 

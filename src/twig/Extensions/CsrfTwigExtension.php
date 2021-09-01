@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype\Plugin\Twig\Twig;
+namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
@@ -31,6 +31,6 @@ class CsrfTwigExtension extends AbstractExtension
      */
     public function csrf() : string
     {
-        return '<input type="hidden" name="' . flextype('csrf')->getTokenName() . '" value="' . flextype('csrf')->getTokenValue() . '">';
+        return '<input type="hidden" name="' . container()->get('csrf')->getTokenName() . '" value="' . container()->get('csrf')->getTokenValue() . '">';
     }
 }

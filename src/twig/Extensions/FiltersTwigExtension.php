@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype\Plugin\Twig\Twig;
+namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 
@@ -28,7 +28,7 @@ class FiltersTwigExtension extends AbstractExtension
 
     public function shortcode($value): string
     {
-        return !empty($value) ? parsers()->shortcode()->process($value) : '';
+        return !empty($value) ? parsers()->shortcodes()->process($value) : '';
     }
 
     public function markdown($value): string

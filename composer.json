@@ -17,10 +17,8 @@
     },
     "require": {
         "php": ">=7.4.0",
-        "twig/twig": "^3.2.1",
-        "slim/flash": "~0.4.0",
-        "flextype-components/arrays" : "3.0.1",
-        "flextype-components/filesystem": "2.0.8"
+        "twig/twig": "^3.3.2",
+        "slim/flash": "~0.4.0"
     },
     "config": {
         "apcu-autoloader": true,
@@ -31,7 +29,10 @@
     },
     "autoload": {
         "classmap": [
-            "twig"
+            "src"
+        ],
+        "files": [
+            "src/helpers/helpers.php"
         ]
     }
 }

@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Founded by Sergey Romanenko and maintained by Flextype Community.
  */
 
-namespace Flextype\Plugin\Twig\Twig;
+namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 
@@ -21,7 +21,7 @@ class FunctionsTwigExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new \Twig\TwigFunction('raw', [$this, 'raw']),
+            new \Twig\TwigFunction('raw', [$this, 'raw'])
         ];
     }
 

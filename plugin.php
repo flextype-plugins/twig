@@ -58,7 +58,7 @@ container()->set('twig', function () {
         $twigExtensionClassName = $twigExtension . 'TwigExtension';
         $twigExtensionClassNameWithNamespace = 'Flextype\\Plugin\\Twig\\Extension\\' . $twigExtension . 'TwigExtension';
 
-        if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/Extension/' . $twigExtensionClassName . '.php')) {
+        if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/Extensions/' . $twigExtensionClassName . '.php')) {
 
             if ($twigExtension == 'Url') continue;
 
