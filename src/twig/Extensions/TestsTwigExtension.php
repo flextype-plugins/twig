@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
+use Twig\TwigTest\TwigTest;
 
 class TestsTwigExtension extends AbstractExtension
 {
@@ -21,14 +22,16 @@ class TestsTwigExtension extends AbstractExtension
     public function getTests() : array
     {
         return [
-            new \Twig\TwigTest('string',  function ($value) { return  is_string($value); }),
-            new \Twig\TwigTest('array',  function ($value) { return  is_array($value); }),
-            new \Twig\TwigTest('float',  function ($value) { return  is_float($value); }),
-            new \Twig\TwigTest('int',  function ($value) { return  is_int($value); }),
-            new \Twig\TwigTest('null',  function ($value) { return  is_null($value); }),
-            new \Twig\TwigTest('numeric',  function ($value) { return  is_numeric($value); }),
-            new \Twig\TwigTest('object',  function ($value) { return  is_object($value); }),
-            new \Twig\TwigTest('scalar',  function ($value) { return  is_scalar($value); }),
+            new TwigTest('instance of',  function ($obj, $class) { return $obj instanceof $class; }),
+            new TwigTest('boolean',  function ($value) { return  is_bool($value); }),
+            new TwigTest('string',  function ($value) { return  is_string($value); }),
+            new TwigTest('array',  function ($value) { return  is_array($value); }),
+            new TwigTest('float',  function ($value) { return  is_float($value); }),
+            new TwigTest('int',  function ($value) { return  is_int($value); }),
+            new TwigTest('null',  function ($value) { return  is_null($value); }),
+            new TwigTest('numeric',  function ($value) { return  is_numeric($value); }),
+            new TwigTest('object',  function ($value) { return  is_object($value); }),
+            new TwigTest('scalar',  function ($value) { return  is_scalar($value); }),
         ];
     }
 }
