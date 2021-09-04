@@ -31,6 +31,6 @@ class CsrfTwigExtension extends AbstractExtension
      */
     public function csrf() : string
     {
-        return '<input type="hidden" name="' . container()->get('csrf')->getTokenName() . '" value="' . container()->get('csrf')->getTokenValue() . '">';
+        return '<input type="hidden" name="' . csrf()->getTokenName() . '" value="' . csrf()->getTokenValue() . '">';
     }
 }
