@@ -32,7 +32,7 @@
             "src/twig"
         ],
         "files": [
-            "src/helpers/helpers.php"
+            "src/twig/helpers/helpers.php"
         ]
     }
 }
