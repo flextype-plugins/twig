@@ -61,7 +61,7 @@ container()->set('twig', function () {
         $twigExtensionClassName = $twigExtension . 'TwigExtension';
         $twigExtensionClassNameWithNamespace = 'Flextype\\Plugin\\Twig\\Extension\\' . $twigExtension . 'TwigExtension';
 
-        if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/Extensions/' . $twigExtensionClassName . '.php')) {
+        if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/core/Extensions/' . $twigExtensionClassName . '.php')) {
             $twig->addExtension(new $twigExtensionClassNameWithNamespace());
         }
     }

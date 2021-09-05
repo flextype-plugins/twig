@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
-use Twig\TwigTest\TwigTest;
+use Twig\TwigTest;
 
 class TestsTwigExtension extends AbstractExtension
 {
