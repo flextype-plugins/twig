@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 class FunctionsTwigExtension extends AbstractExtension
 {
@@ -21,7 +22,7 @@ class FunctionsTwigExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new \Twig\TwigFunction('raw', [$this, 'raw'])
+            new TwigFunction('raw', [$this, 'raw'])
         ];
     }
 

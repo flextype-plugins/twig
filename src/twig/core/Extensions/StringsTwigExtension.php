@@ -11,6 +11,7 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Atomastic\Strings\Strings;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 class StringsTwigExtension extends AbstractExtension
 {
@@ -22,7 +23,7 @@ class StringsTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('strings', 'strings'),
+            new TwigFunction('strings', 'strings'),
         ];
     }
 }

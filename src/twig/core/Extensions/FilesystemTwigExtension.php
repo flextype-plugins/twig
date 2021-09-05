@@ -13,6 +13,7 @@ use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 use Atomastic\Macroable\Macroable;
 use Symfony\Component\Finder\Finder;
+use Twig\TwigFunction;
 
 class FilesystemTwigExtension extends AbstractExtension
 {
@@ -24,7 +25,7 @@ class FilesystemTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('filesystem', function() { return new FilesystemTwig(); }),
+            new TwigFunction('filesystem', function() { return new FilesystemTwig(); }),
         ];
     }
 }

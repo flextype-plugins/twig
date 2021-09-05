@@ -11,6 +11,7 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
+use Twig\TwigFunction;
 
 class CsrfTwigExtension extends AbstractExtension
 {
@@ -22,7 +23,7 @@ class CsrfTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('csrf', [$this, 'csrf'], ['is_safe' => ['html']]),
+            new TwigFunction('csrf', [$this, 'csrf'], ['is_safe' => ['html']]),
         ];
     }
 

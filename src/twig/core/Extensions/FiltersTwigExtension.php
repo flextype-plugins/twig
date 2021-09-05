@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 class FiltersTwigExtension extends AbstractExtension
 {
@@ -21,8 +22,8 @@ class FiltersTwigExtension extends AbstractExtension
     public function getFilters() : array
     {
         return [
-            new \Twig\TwigFilter('shortcode', [$this, 'shortcode']),
-            new \Twig\TwigFilter('markdown', [$this, 'markdown']),
+            new TwigFilter('shortcode', [$this, 'shortcode']),
+            new TwigFilter('markdown', [$this, 'markdown']),
         ];
     }
 

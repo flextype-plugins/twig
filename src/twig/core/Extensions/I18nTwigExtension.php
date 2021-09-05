@@ -11,6 +11,8 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Flextype\Component\I18n\I18n;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+use Twig\TwigFilter;
 
 class I18nTwigExtension extends AbstractExtension
 {
@@ -22,8 +24,8 @@ class I18nTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('tr', [$this, 'tr']),
-            new \Twig\TwigFunction('__', [$this, 'tr']),
+            new TwigFunction('tr', [$this, 'tr']),
+            new TwigFunction('__', [$this, 'tr']),
         ];
     }
 
@@ -35,7 +37,7 @@ class I18nTwigExtension extends AbstractExtension
     public function getFilters() : array
     {
         return [
-            new \Twig\TwigFilter('tr', [$this, 'tr'])
+            new TwigFilter('tr', [$this, 'tr'])
         ];
     }
 

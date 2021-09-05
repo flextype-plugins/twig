@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
-
 use Atomastic\Arrays\Arrays;
+use Twig\TwigFunction;
 
 class ArraysTwigExtension extends AbstractExtension
 {
@@ -23,10 +23,10 @@ class ArraysTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('arrays', 'arrays'),
-            new \Twig\TwigFunction('arraysFromJson', 'arraysFromJson'),
-            new \Twig\TwigFunction('arraysFromString', 'arraysFromString'),
-            new \Twig\TwigFunction('arraysWithRange', 'arraysWithRange')
+            new TwigFunction('arrays', 'arrays'),
+            new TwigFunction('arraysFromJson', 'arraysFromJson'),
+            new TwigFunction('arraysFromString', 'arraysFromString'),
+            new TwigFunction('arraysWithRange', 'arraysWithRange')
         ];
     }
 }
