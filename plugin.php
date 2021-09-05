@@ -35,13 +35,16 @@ use Twig\Extension\StringLoaderExtension;
  */
 $twigLoader = require_once $twigAutoload;
 
+container()->set('flash', new Messages());
+   
+   
 /**
  * Add Twig service to Flextype container
  */
 container()->set('twig', function () {
 
     // Create Twig View
-    $twig = new Twig(PATH['project'],
+    $twig = Twig::create(PATH['project'],
                         ['auto_reload' => registry()->get('plugins.twig.settings.auto_reload'),
                          'cache' => registry()->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
                          'debug' => registry()->get('plugins.twig.settings.debug'),
@@ -59,13 +62,6 @@ container()->set('twig', function () {
         $twigExtensionClassNameWithNamespace = 'Flextype\\Plugin\\Twig\\Extension\\' . $twigExtension . 'TwigExtension';
 
         if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/Extensions/' . $twigExtensionClassName . '.php')) {
-
-            if ($twigExtension == 'Url') continue;
-
-            if ($twigExtension == 'Flextype') {
-                container()->set('flash', new Messages());
-            }
-
             $twig->addExtension(new $twigExtensionClassNameWithNamespace());
         }
     }
@@ -73,3 +69,6 @@ container()->set('twig', function () {
     // Return view
     return $twig;
 });
+
+// Add Twig-View Middleware
+app()->add(TwigMiddleware::createFromContainer(app()));
