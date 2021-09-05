@@ -81,7 +81,7 @@ For example, let’s say you have a search results page, where the search query 
 ```
 {% set query = request.getQueryParam().q %}
 
-{% set entries = flextype.entries.fetch('blog', {'collection': true})
+{% set entries = entries().fetch('blog', {'collection': true})
                                  .where('title', 'contains', query)
                                  .all() %}
 
@@ -168,16 +168,16 @@ Returns Flextype object, which provides access points to various helper function
 
 | Objects | Available Methods |
 |---|---|
-| `flextype.entries` | [fetch()](https://docs.flextype.org/en/core/entries#methods-fetch)
+| `entries()` | [fetch()](https://docs.flextype.org/en/core/entries#methods-fetch)
 | `flextype.media.files` | [fetch()](https://docs.flextype.org/en/core/media#methods-files-fetch) [has()](https://docs.flextype.org/en/core/media#methods-files-has) |
 | `flextype.media.files.meta` | [getFileMetaLocation()](https://docs.flextype.org/en/core/media#methods-files-meta-getFileMetaLocation) |
 | `flextype.media.folders` | [fetch()](https://docs.flextype.org/en/core/media#methods-folders-fetch) [getDirectoryLocation()](https://docs.flextype.org/en/core/media#methods-folders-getDirLocation) |
 | `flextype.media.folders.meta` | [getDirMetaLocation()](https://docs.flextype.org/en/core/media#methods-folders-meta-getDirMetaLocation) |
-| `flextype.registry` | [all methods available](https://docs.flextype.org/en/core/registry) |
-| `flextype.parsers` | [all methods available](https://docs.flextype.org/en/core/parsers) |
-| `flextype.serializers` | [all methods available](https://docs.flextype.org/en/core/serializers) |
-| `flextype.cache` | [all methods available](https://www.phpfastcache.com) |
-| `flextype.emitter` | [all methods available](https://event.thephpleague.com/2.0/) |
+| `registry()` | [all methods available](https://docs.flextype.org/en/core/registry) |
+| `parsers()` | [all methods available](https://docs.flextype.org/en/core/parsers) |
+| `serializers()` | [all methods available](https://docs.flextype.org/en/core/serializers) |
+| `cache()` | [all methods available](https://www.phpfastcache.com) |
+| `emitter()` | [all methods available](https://event.thephpleague.com/2.0/) |
 
 ### <a name="functions"></a> Functions
 
