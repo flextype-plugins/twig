@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * @link https://flextype.org
+ * @link https://awilum.github.io/flextype
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -36,7 +36,6 @@ use Twig\Extension\StringLoaderExtension;
 $twigLoader = require_once $twigAutoload;
 
 container()->set('flash', new Messages());
-   
    
 /**
  * Add Twig service to Flextype container

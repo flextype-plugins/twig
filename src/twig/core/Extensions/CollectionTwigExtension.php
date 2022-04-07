@@ -17,9 +17,10 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
+use Glowy\Arrays\Arrays as Collection;
 use Twig\TwigFunction;
 
-class SerializersTwigExtension extends AbstractExtension
+class CollectionTwigExtension extends AbstractExtension
 {
     /**
      * Callback for twig.
@@ -29,7 +30,10 @@ class SerializersTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('serializers', 'serializers')
+            new TwigFunction('collection', 'arrays'),
+            new TwigFunction('collectionFromJson', 'arraysFromJson'),
+            new TwigFunction('collectionFromString', 'arraysFromString'),
+            new TwigFunction('collectionWithRange', 'arraysWithRange')
         ];
     }
 }
