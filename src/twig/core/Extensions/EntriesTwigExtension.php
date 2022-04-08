@@ -18,6 +18,7 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use Glowy\Arrays\Arrays as Collection;
 use Glowy\Macroable\Macroable;
 
 class EntriesTwigExtension extends AbstractExtension
@@ -49,9 +50,9 @@ class EntriesTwig
      *
      * @return self Returns instance of The Arrays class.
      */
-    public function fetch(string $id, array $options = []): Arrays
+    public function fetch(string $id, array $options = []): Collection
     {
-        return $this->entries->fetch($id, $options);
+        return entries()->fetch($id, $options);
     }
 
     /**
@@ -65,6 +66,6 @@ class EntriesTwig
      */
     public function has(string $id): bool
     {
-        return $this->entries->has($id);
+        return entries()->entries->has($id);
     }
 }
