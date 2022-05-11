@@ -266,6 +266,7 @@ class Twig implements ArrayAccess
      *
      * @return mixed The key's value, or the default value
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         if (!$this->offsetExists($key)) {
