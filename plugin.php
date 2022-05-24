@@ -69,5 +69,11 @@ container()->set('twig', function () {
     return $twig;
 });
 
-// Add Twig-View Middleware
+// Init Twig Shortcodes
+parsers()->shortcodes()->initShortcodes(registry()->get('plugins.twig.settings.parsers.shortcodes.shortcodes'));
+
+// Init Twig Directives 
+entries()->initDirectives(registry()->get('plugins.twig.settings.entries.directives'));
+
+// Add Twig Middleware
 app()->add(TwigMiddleware::createFromContainer(app()));
