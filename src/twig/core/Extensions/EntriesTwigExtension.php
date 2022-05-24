@@ -55,6 +55,11 @@ class EntriesTwig
         return entries()->fetch($id, $options);
     }
 
+    public function registry(): Collection
+    {
+        return entries()->registry();
+    }
+
     /**
      * Check whether entry exists
      *
