@@ -43,7 +43,7 @@ container()->set('flash', new Messages());
 container()->set('twig', function () {
 
     // Create Twig View
-    $twig = Twig::create(PATH['project'] . '/' . registry()->get('plugins.twig.settings.directory') . '/' ,
+    $twig = Twig::create(PATH['project'] . '/' . registry()->get('flextype.settings.view.directory') . '/' ,
                         ['auto_reload' => registry()->get('plugins.twig.settings.auto_reload'),
                          'cache' => registry()->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
                          'debug' => registry()->get('plugins.twig.settings.debug'),

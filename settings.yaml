@@ -20,7 +20,6 @@ auto_reload: true
 cache: true
 debug: false
 charset: "UTF-8"
-directory: "views"
 entries:
   directives:
     twig:
