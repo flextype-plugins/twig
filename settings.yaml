@@ -20,7 +20,7 @@ auto_reload: true
 cache: true
 debug: false
 charset: "UTF-8"
-templates: "/templates"
+templates: "/views/templates"
 entries:
   directives:
     twig:
