@@ -55,6 +55,13 @@ class EntriesTwig
         return entries()->fetch($id, $options);
     }
 
+    /**
+     * Get Entries Registry.
+     *
+     * @return Collection Returns entries registry.
+     *
+     * @access public
+     */
     public function registry(): Collection
     {
         return entries()->registry();

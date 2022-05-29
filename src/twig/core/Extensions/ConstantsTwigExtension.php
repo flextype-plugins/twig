@@ -17,19 +17,19 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
-use Twig\Extension\GlobalsInterface;
-use const PHP_VERSION;
+use Twig\TwigFunction;
 
-class ConstantsTwigExtension extends AbstractExtension implements GlobalsInterface
+class ConstantTwigExtension extends AbstractExtension
 {
     /**
-     * Register Global variables in an extension
+     * Callback for twig.
+     *
+     * @return array
      */
-    public function getGlobals() : array
+    public function getFunctions() : array
     {
         return [
-            'PATH_PROJECT' => PATH['project'],
-            'PHP_VERSION' => PHP_VERSION,
+            new TwigFunction('const', fn(string $const) => defined($const) ? constant($const) : '')
         ];
     }
 }
