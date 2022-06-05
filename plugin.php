@@ -75,5 +75,8 @@ parsers()->shortcodes()->initShortcodes(registry()->get('plugins.twig.settings.p
 // Init Twig Directives 
 entries()->initDirectives(registry()->get('plugins.twig.settings.entries.directives'));
 
+// Init Twig Expressions
+entries()->initExpressions(registry()->get('plugins.twig.settings.entries.expressions'));
+
 // Add Twig Middleware
 app()->add(TwigMiddleware::createFromContainer(app()));

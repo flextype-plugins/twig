@@ -21,6 +21,10 @@ cache: true
 debug: false
 charset: "UTF-8"
 entries:
+  expressions:
+    twig:
+      enabled: true
+      class: "Flextype\\Plugin\\Twig\\Expressions\\TwigExpression"
   directives:
     twig:
       enabled: true
