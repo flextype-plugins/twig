@@ -30,5 +30,9 @@ parsers()->shortcodes()->addHandler('twig', static function (ShortcodeInterface 
         return '';
     }
     
-    return twig()->fetchFromString($s->getContent(), []);
+    if ($s->getContent() != null) {
+        return twig()->fetchFromString($s->getContent(), []);
+    }
+
+    return '@twig';
 });
