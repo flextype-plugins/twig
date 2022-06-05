@@ -19,7 +19,7 @@ namespace Flextype\Plugin\Twig\Extension;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-class ConstantTwigExtension extends AbstractExtension
+class ConstantsTwigExtension extends AbstractExtension
 {
     /**
      * Callback for twig.
