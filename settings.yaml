@@ -29,13 +29,13 @@ entries:
     twig:
       enabled: true
       enabled_globally: false
-      path: "/project/plugins/twig/src/twig/core/Entries/Directives/TwigDirective.php"
+      path: "project/plugins/twig/src/twig/core/Entries/Directives/TwigDirective.php"
 parsers:
   shortcodes:
     shortcodes:
       twig:
         enabled: true
-        path: "/project/plugins/twig/src/twig/core/Parsers/Shortcodes/TwigShortcode.php"
+        path: "project/plugins/twig/src/twig/core/Parsers/Shortcodes/TwigShortcode.php"
 extensions: 
   - I18n
   - Filesystem

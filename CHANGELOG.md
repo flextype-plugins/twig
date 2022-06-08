@@ -1,9 +1,9 @@
 <a name="3.0.0"></a>
-# [3.0.0](https://github.com/flextype-plugins/twig/compare/v2.1.0...v3.0.0) (2022-XX-XX)
+# [3.0.0](https://github.com/flextype-plugins/twig/compare/v2.1.0...v3.0.0) (2022-06-XX)
 
 ### Features
 
-* **core** update code base for new Flextype 0.10.0
+* **core** update code base for new Flextype 1.0.0-alpha.1 release.
 
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/flextype-plugins/twig/compare/v2.0.0...v2.1.0) (2021-01-14)
