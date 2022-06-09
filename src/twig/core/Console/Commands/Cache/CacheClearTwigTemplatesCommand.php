@@ -33,7 +33,7 @@ class CacheClearTwigTemplatesCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $configPath = PATH['tmp'] . '/twig';
+        $configPath = PATH_TMP . '/twig';
 
         if (filesystem()->directory($configPath)->exists()) {
             if (filesystem()->directory($configPath)->delete()) {

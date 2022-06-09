@@ -46,9 +46,9 @@ container()->set('flash', new Messages());
 container()->set('twig', function () {
 
     // Create Twig View
-    $twig = Twig::create(PATH['project'],
+    $twig = Twig::create(PATH_PROJECT,
                         ['auto_reload' => registry()->get('plugins.twig.settings.auto_reload'),
-                         'cache' => registry()->get('plugins.twig.settings.cache') ? PATH['tmp'] . '/twig' : false,
+                         'cache' => registry()->get('plugins.twig.settings.cache') ? PATH_TMP . '/twig' : false,
                          'debug' => registry()->get('plugins.twig.settings.debug'),
                          'charset' => registry()->get('plugins.twig.settings.charset')]);
 
@@ -63,7 +63,7 @@ container()->set('twig', function () {
         $twigExtensionClassName = $twigExtension . 'TwigExtension';
         $twigExtensionClassNameWithNamespace = 'Flextype\\Plugin\\Twig\\Extension\\' . $twigExtension . 'TwigExtension';
 
-        if (file_exists(ROOT_DIR . '/project/plugins/twig/src/twig/core/Extensions/' . $twigExtensionClassName . '.php')) {
+        if (file_exists(PATH_PROJECT . '/plugins/twig/src/twig/core/Extensions/' . $twigExtensionClassName . '.php')) {
             $twig->addExtension(new $twigExtensionClassNameWithNamespace());
         }
     }
