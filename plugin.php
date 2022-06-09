@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Flextype\Plugin\Twig;
 
+use Flextype\Plugin\Twig\Console\Commands\Cache\CacheClearTwigTemplatesCommand;
 use function is_file;
 use Slim\Http\Environment;
 use Slim\Http\Uri;
@@ -34,6 +35,8 @@ use Twig\Extension\StringLoaderExtension;
  * Register The Auto Loader
  */
 $twigLoader = require_once $twigAutoload;
+
+console()->add(new CacheClearTwigTemplatesCommand());
 
 container()->set('flash', new Messages());
    
