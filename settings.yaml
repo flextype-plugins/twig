@@ -54,6 +54,8 @@ extensions:
   - Parsers
   - Flash
   - Slugify
+  - Cache
+  - Image
 
 # Twig plugin priority
 priority: 0

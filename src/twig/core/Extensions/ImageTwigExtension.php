@@ -17,10 +17,9 @@ declare(strict_types=1);
 namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
-use Glowy\Arrays\Arrays as Collection;
 use Twig\TwigFunction;
 
-class CollectionTwigExtension extends AbstractExtension
+class ImageTwigExtension extends AbstractExtension
 {
     /**
      * Callback for twig.
@@ -30,12 +29,9 @@ class CollectionTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('collection', 'collection'),
-            new TwigFunction('collectionFromJson', 'collectionFromJson'),
-            new TwigFunction('collectionFromString', 'collectionFromString'),
-            new TwigFunction('collectionWithRange', 'collectionWithRange'),
-            new TwigFunction('collectionFromQueryString', 'collectionFromQueryString'),
-            new TwigFunction('filterCollection', 'filterCollection'),
+            new TwigFunction('imageFile', 'imageFile'),
+            new TwigFunction('imageCanvas', 'imageCanvas'),
+            new TwigFunction('imageCache', 'imageCache'),
         ];
     }
 }
