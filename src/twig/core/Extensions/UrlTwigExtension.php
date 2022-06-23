@@ -36,7 +36,8 @@ class UrlTwigExtension extends AbstractExtension
             new TwigFunction('getCurrentUrl', 'getCurrentUrl'),
             new TwigFunction('getAbsoluteUrl', 'getAbsoluteUrl'),
             new TwigFunction('getUriString', 'getUriString'),
-            new TwigFunction('redirect', 'redirect')
+            new TwigFunction('redirect', 'redirect'),
+            new TwigFunction('getProjectUrl', 'getProjectUrl')
         ];
     }
 }
