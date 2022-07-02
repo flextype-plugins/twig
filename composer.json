@@ -3,13 +3,13 @@
     "type": "project",
     "description": "Twig plugin to present Twig template engine for Flextype.",
     "keywords": ["twig", "plugin", "flextype", "php", "html"],
-    "homepage": "https://github.com/flextype-plugins/twig",
+    "homepage": "https://awilum.github.io/flextype/downloads/extend/plugins/twig",
     "license": "MIT",
     "authors": [
         {
             "name": "Sergey Romanenko",
             "email": "awilum@msn.com",
-            "homepage": "https://awilum.github.io/flextype"
+            "homepage": "https://awilum.github.io"
         }
     ],
     "support": {
