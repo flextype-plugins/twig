@@ -19,6 +19,12 @@ namespace Flextype\Plugin\Twig\Extension;
 use Twig\Extension\AbstractExtension;
 use Glowy\Arrays\Arrays as Collection;
 use Twig\TwigFunction;
+use function Flextype\collection;
+use function Flextype\collectionFromJson;
+use function Flextype\collectionFromString;
+use function Flextype\collectionWithRange;
+use function Flextype\collectionFromQueryString;
+use function Flextype\filterCollection;
 
 class CollectionTwigExtension extends AbstractExtension
 {

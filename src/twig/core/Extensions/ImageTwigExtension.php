@@ -18,6 +18,9 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use function Flextype\imageFile;
+use function Flextype\imageCanvas;
+use function Flextype\imageCache;
 
 class ImageTwigExtension extends AbstractExtension
 {

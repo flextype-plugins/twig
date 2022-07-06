@@ -18,6 +18,15 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use function Flextype\urlFor;
+use function Flextype\fullUrlFor;
+use function Flextype\getBasePath;
+use function Flextype\getBaseUrl;
+use function Flextype\getCurrentUrl;
+use function Flextype\getAbsoluteUrl;
+use function Flextype\getUriString;
+use function Flextype\redirect;
+use function Flextype\getProjectUrl;
 
 class UrlTwigExtension extends AbstractExtension
 {

@@ -16,13 +16,15 @@
       "issues": "https://github.com/flextype-plugins/twig/issues"
     },
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "twig/twig": "^3.4.1",
         "slim/flash": "~0.4.0"
     },
     "config": {
         "apcu-autoloader": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "sort-packages": true
     },
     "autoload": {
         "classmap": [
