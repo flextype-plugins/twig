@@ -19,6 +19,7 @@ namespace Flextype\Plugin\Twig\Extension;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use function Flextype\imageFile;
+use function Flextype\imageProcessFile;
 use function Flextype\imageCanvas;
 use function Flextype\imageCache;
 
@@ -32,6 +33,7 @@ class ImageTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
+            new TwigFunction('imageFile', '\Flextype\imageProcessFile'),
             new TwigFunction('imageFile', '\Flextype\imageFile'),
             new TwigFunction('imageCanvas', '\Flextype\imageCanvas'),
             new TwigFunction('imageCache', '\Flextype\imageCache'),
