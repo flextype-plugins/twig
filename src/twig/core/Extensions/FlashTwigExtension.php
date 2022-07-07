@@ -30,7 +30,7 @@ class FlashTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('flash', 'flash')
+            new TwigFunction('flash', '\Flextype\flash')
         ];
     }
 }

@@ -30,7 +30,7 @@ class ActionsTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('actions', 'actions')
+            new TwigFunction('actions', '\Flextype\actions')
         ];
     }
 }

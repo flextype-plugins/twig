@@ -36,12 +36,12 @@ class CollectionTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('collection', 'collection'),
-            new TwigFunction('collectionFromJson', 'collectionFromJson'),
-            new TwigFunction('collectionFromString', 'collectionFromString'),
-            new TwigFunction('collectionWithRange', 'collectionWithRange'),
-            new TwigFunction('collectionFromQueryString', 'collectionFromQueryString'),
-            new TwigFunction('filterCollection', 'filterCollection'),
+            new TwigFunction('collection', '\Flextype\collection'),
+            new TwigFunction('collectionFromJson', '\Flextype\collectionFromJson'),
+            new TwigFunction('collectionFromString', '\Flextype\collectionFromString'),
+            new TwigFunction('collectionWithRange', '\Flextype\collectionWithRange'),
+            new TwigFunction('collectionFromQueryString', '\Flextype\collectionFromQueryString'),
+            new TwigFunction('filterCollection', '\Flextype\filterCollection'),
         ];
     }
 }

@@ -30,7 +30,7 @@ class RegistryTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('registry', 'registry')
+            new TwigFunction('registry', '\Flextype\registry')
         ];
     }
 }

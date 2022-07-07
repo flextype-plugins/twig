@@ -30,7 +30,7 @@ class SerializersTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('serializers', 'serializers')
+            new TwigFunction('serializers', '\Flextype\serializers')
         ];
     }
 }

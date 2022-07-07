@@ -30,7 +30,7 @@ class SlugifyTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('slugify', 'slugify')
+            new TwigFunction('slugify', '\Flextype\slugify')
         ];
     }
 }

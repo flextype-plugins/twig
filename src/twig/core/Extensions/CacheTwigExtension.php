@@ -30,7 +30,7 @@ class CacheTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('cache', 'cache')
+            new TwigFunction('cache', '\Flextype\cache')
         ];
     }
 }

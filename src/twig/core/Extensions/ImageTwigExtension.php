@@ -32,9 +32,9 @@ class ImageTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('imageFile', 'imageFile'),
-            new TwigFunction('imageCanvas', 'imageCanvas'),
-            new TwigFunction('imageCache', 'imageCache'),
+            new TwigFunction('imageFile', '\Flextype\imageFile'),
+            new TwigFunction('imageCanvas', '\Flextype\imageCanvas'),
+            new TwigFunction('imageCache', '\Flextype\imageCache'),
         ];
     }
 }

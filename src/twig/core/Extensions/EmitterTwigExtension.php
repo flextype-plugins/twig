@@ -30,7 +30,7 @@ class EmitterTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('emitter', 'emitter')
+            new TwigFunction('emitter', '\Flextype\emitter')
         ];
     }
 }

@@ -31,7 +31,7 @@ class StringsTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('strings', 'strings'),
+            new TwigFunction('strings', '\Glowy\Strings\strings'),
         ];
     }
 }
