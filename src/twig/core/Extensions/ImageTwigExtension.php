@@ -33,7 +33,7 @@ class ImageTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('imageFile', '\Flextype\imageProcessFile'),
+            new TwigFunction('imageProcessFile', '\Flextype\imageProcessFile'),
             new TwigFunction('imageFile', '\Flextype\imageFile'),
             new TwigFunction('imageCanvas', '\Flextype\imageCanvas'),
             new TwigFunction('imageCache', '\Flextype\imageCache'),
