@@ -2,17 +2,26 @@
 
 declare(strict_types=1);
 
-/**
- * Flextype (https://flextype.org)
- * Founded by Sergey Romanenko and maintained by Flextype Community.
+ /**
+ * Flextype - Hybrid Content Management System with the freedom of a headless CMS 
+ * and with the full functionality of a traditional CMS!
+ * 
+ * Copyright (c) Sergey Romanenko (https://awilum.github.io)
+ *
+ * Licensed under The MIT License.
+ *
+ * For full copyright and license information, please see the LICENSE
+ * Redistributions of files must retain the above copyright notice.
  */
 
-namespace Flextype\Plugin\Twig\Twig;
+namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
-use Atomastic\Macroable\Macroable;
+use Glowy\Macroable\Macroable;
 use Symfony\Component\Finder\Finder;
+use Twig\TwigFunction;
+use function Glowy\Filesystem\filesystem;
 
 class FilesystemTwigExtension extends AbstractExtension
 {
@@ -24,7 +33,7 @@ class FilesystemTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new \Twig\TwigFunction('filesystem', function() { return new FilesystemTwig(); }),
+            new TwigFunction('filesystem', function() { return new FilesystemTwig(); }),
         ];
     }
 }
@@ -280,7 +289,6 @@ class FilesystemFileTwig
         return filesystem()->file($this->path)->isFile();
     }
 }
-
 
 class FilesystemDirectoryTwig
 {
