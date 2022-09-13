@@ -80,10 +80,10 @@ container()->set('twig', function () {
 });
 
 // Init Twig Shortcodes
-parsers()->shortcodes()->initShortcodes(registry()->get('plugins.twig.settings.parsers.shortcodes.shortcodes'));
+parsers()->shortcodes()->registerShortcodes(registry()->get('plugins.twig.settings.parsers.shortcodes.shortcodes'));
 
 // Init Twig Directives 
-entries()->initDirectives(registry()->get('plugins.twig.settings.entries.directives'));
+entries()->registerDirectives(registry()->get('plugins.twig.settings.entries.directives'));
 
-// Init Twig Expressions
-entries()->initExpressions(registry()->get('plugins.twig.settings.entries.expressions'));
+// Register Twig Expressions
+parsers()->expressions()->registerExpressions(registry()->get('plugins.twig.settings.entries.expressions'));

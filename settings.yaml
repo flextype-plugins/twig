@@ -58,6 +58,7 @@ extensions:
   - Cache
   - Image
   - Url
+  - Vars
 
 # Twig plugin priority
 priority: 0
