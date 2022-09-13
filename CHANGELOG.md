@@ -1,3 +1,22 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/flextype-plugins/twig/compare/v3.1.0...v3.2.0) (2022-09-13)
+
+### Features
+
+* **core** Add new functions `abs` and `round` for Math Extension.
+
+* **core** Add new filter `expressions`.
+
+* **core** Add new extensions `Fetch`.
+
+
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/flextype-plugins/twig/compare/v3.0.0...v3.1.0) (2022-09-13)
+
+### Features
+
+* **core** update code base for new Flextype 1.0.0-alpha.2 release.
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/flextype-plugins/twig/compare/v2.1.0...v3.0.0) (2022-07-11)
 

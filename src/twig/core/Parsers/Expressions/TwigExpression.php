@@ -28,7 +28,7 @@ class TwigExpression implements ExpressionFunctionProviderInterface
     public function getFunctions()
     {
         return [
-            new ExpressionFunction('twig', fn() => '(new TwigExpressionMethods())', fn($arguments) => (new TwigExpressionMethods()))
+            new ExpressionFunction('twig', fn() => '(new \Flextype\Plugin\Twig\Expressions\TwigExpressionMethods())', fn($arguments) => (new TwigExpressionMethods()))
         ];
     }
 }

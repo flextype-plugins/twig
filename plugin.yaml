@@ -1,5 +1,5 @@
 name: Twig
-version: 3.0.0
+version: 3.2.0
 description: Twig plugin to present Twig template engine for Flextype.
 icon:
   name: palette
@@ -14,4 +14,4 @@ bugs: https://github.com/flextype-plugins/twig/issues
 license: MIT
 
 dependencies:
-  flextype: "^1.0.0-alpha.1"
+  flextype: "^1.0.0-alpha.2"

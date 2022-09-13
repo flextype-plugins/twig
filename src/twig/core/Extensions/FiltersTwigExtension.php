@@ -33,6 +33,7 @@ class FiltersTwigExtension extends AbstractExtension
             new TwigFilter('shortcodes', [$this, 'shortcodes']),
             new TwigFilter('textile', [$this, 'textile']),
             new TwigFilter('markdown', [$this, 'markdown']),
+            new TwigFilter('expressions', [$this, 'expressions']),
         ];
     }
 
@@ -49,5 +50,10 @@ class FiltersTwigExtension extends AbstractExtension
     public function markdown($value): string
     {
         return !empty($value) ? parsers()->markdown()->parse($value) : '';
+    }
+
+    public function expressions($value): string
+    {
+        return !empty($value) ? parsers()->expressions()->evaluate($value) : '';
     }
 }
