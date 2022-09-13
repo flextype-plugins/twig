@@ -18,8 +18,9 @@ namespace Flextype\Plugin\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use function Flextype\fetch;
 
-class MathTwigExtension extends AbstractExtension
+class FetchTwigExtension extends AbstractExtension
 {
     /**
      * Callback for twig.
@@ -29,12 +30,7 @@ class MathTwigExtension extends AbstractExtension
     public function getFunctions() : array
     {
         return [
-            new TwigFunction('ceil', '\ceil'),
-            new TwigFunction('floor', '\floor'),
-            new TwigFunction('round', '\round'),
-            new TwigFunction('abs', '\abs'),
-            new TwigFunction('min', '\min'),
-            new TwigFunction('max', '\max')
+            new TwigFunction('fetch', '\Flextype\fetch')
         ];
     }
 }

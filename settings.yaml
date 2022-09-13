@@ -59,6 +59,7 @@ extensions:
   - Image
   - Url
   - Vars
+  - Fetch
 
 # Twig plugin priority
 priority: 0
