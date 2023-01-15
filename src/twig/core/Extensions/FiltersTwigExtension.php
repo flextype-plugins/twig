@@ -39,7 +39,7 @@ class FiltersTwigExtension extends AbstractExtension
 
     public function shortcodes($value): string
     {
-        return !empty($value) ? parsers()->shortcodes()->process($value) : '';
+        return !empty($value) ? parsers()->shortcodes()->parse($value) : '';
     }
 
     public function textile($value): string
