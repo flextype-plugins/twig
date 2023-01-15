@@ -22,7 +22,7 @@ use Flextype\Entries\Entries;
 use function Flextype\entries;
 use function Flextype\parsers;
 use function Flextype\registry;
-use function Flextype\Plugin\twig;
+use function Flextype\Plugin\Twig\twig;
 
 // Shortcode: (twig) Twig code here... (/twig)
 parsers()->shortcodes()->addHandler('twig', static function (ShortcodeInterface $s) {
